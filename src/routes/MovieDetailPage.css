@@ -1,0 +1,63 @@
+.movie_detail_cell {
+  display: flex;
+  background: #fff;
+  width: 100%;
+  height: 180px;
+}
+
+.movie_detail_image {
+    margin-left: 12px;
+    margin-right: 6px;
+    margin-top: 10px;
+    width: 116px;
+    height: 160px;
+    background-color: #eeeeee;
+}
+
+.movie_detail_name {
+  margin-top: 6px;
+  margin-left: 6px;
+  font-size: 20px;
+  color: black;
+}
+
+.movie_detail_desc {
+  margin-top: 3px;
+  margin-left: 6px;
+  font-size: 12px;
+  max-width: 260px;   
+  white-space:nowrap; 
+  text-overflow:ellipsis;   
+  overflow:hidden; 
+  height: 22px;
+  line-height: 22px;
+  color: #707070;
+}
+
+.movie_story_title {
+  margin-top: 12px;
+  margin-left: 12px;
+  font-size: 16px;
+  color: grey;
+}
+
+.movie_story_desc {
+  margin-top: 12px;
+  margin-left: 12px;
+  margin-right: 12px;
+  margin-bottom: 12px;
+  font-size: 13px; 
+  color: #707070;
+}
+
+.movie_book_button {
+  text-align: center;
+  color: white;
+  flex: 1;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  height: 50px;
+  line-height: 50px;
+  background: #1ad450;
+}

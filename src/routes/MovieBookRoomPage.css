@@ -1,0 +1,54 @@
+.movie_cell {
+  display: flex;
+  background: #fff;
+  width: 100%;
+  height: 120px;
+}
+
+.movie_image {
+    margin-left: 12px;
+    margin-right: 6px;
+    margin-top: 10px;
+    width: 70px;
+    height: 100px;
+    background-color: #eeeeee;
+}
+
+.movie_name {
+  margin-top: 6px;
+  margin-left: 6px;
+  font-size: 20px;
+  color: black;
+}
+
+.movie_desc {
+  margin-top: 3px;
+  margin-left: 6px;
+  font-size: 14px;
+  max-width: 260px;   
+  white-space:nowrap; 
+  text-overflow:ellipsis;   
+  overflow:hidden; 
+  height: 22px;
+  line-height: 22px;
+  color: #707070;
+}
+
+.movie_book {
+  margin-top: 50px;
+  background: orange;
+  width: 48px;
+  height: 26px;
+  line-height: 26px;
+  border-radius: 15px;
+  color: white;
+  font-size: 12px;
+  text-align: center;
+}
+
+.movie_separator {
+  margin-left: 12px;
+  width: 100%;
+  height: 1px;
+  background: #e9e9e9;
+}

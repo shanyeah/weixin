@@ -1,0 +1,9 @@
+.tab_title {
+  font-size: 13px;
+  text-align: center;
+  color: #717171;
+}
+
+.tab_title.selected {
+  color: #d4237a;
+}

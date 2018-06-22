@@ -1,0 +1,17 @@
+.review_submit_button {
+    margin-top: 20px;
+    margin-left: 12px;
+    margin-right: 12px;
+}
+
+.review_title {
+  margin-left: 10px;
+  margin-top: 10px;
+  font-size: 16px;
+}
+
+.review_star_icon {
+  margin-right: 6px;
+  width:20px;
+  height:20px;
+}

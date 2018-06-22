@@ -1,0 +1,19 @@
+.login_logo {
+  width: 120px;
+  height: 120px;
+  margin:20px auto;
+  display: block;
+}
+
+.login_send_button {
+  height: 30px;
+  line-height: 30px;
+  font-size: 15px;
+  text-align: center;
+}
+
+.login_button {
+  margin-top: 20px;
+  margin-left: 12px;
+  margin-right: 12px;
+}

@@ -1,0 +1,10 @@
+.loading_div {
+    width:60;
+    height:60;
+    position:absolute;
+    left:50%;
+    top:50%;
+    background-color: transparent;    
+    margin-left:-30px;
+    margin-top:-30px;
+}

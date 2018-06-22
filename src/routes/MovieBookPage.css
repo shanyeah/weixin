@@ -1,0 +1,20 @@
+
+.movie_book_des {
+    font-size: 16px;
+}
+
+.movie_book_check {
+    width: 20px;
+    height: 20px;
+}
+
+.movie_book_des.grey {
+    color: grey;
+}
+
+.movie_book_tips {
+    margin-top: 12px;
+    text-align: center;
+    font-size: 14px;
+    color: grey;
+}

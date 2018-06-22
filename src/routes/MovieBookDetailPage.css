@@ -1,0 +1,15 @@
+.movie_book_scroll_view {
+    margin-bottom: 100px;
+    overflow-x: hidden;
+    overflow-y: scroll;
+    -webkit-overflow-scrolling: touch;
+}
+
+.movie_book_check {
+    width: 20px;
+    height: 20px;
+}
+
+.movie_book_des {
+    font-size: 16px;
+}

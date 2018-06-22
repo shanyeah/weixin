@@ -1,0 +1,52 @@
+.order_cell {
+    margin-left: 12px;
+    display:flex;
+    align-items: left;
+    flex-direction:column;
+    background: #fff;
+    width: 100%;
+    border-bottom: 1px solid #eeeeee;
+  }
+  
+.order_organ {
+    margin-top: 10px;
+    font-size: 18px;
+    height: 24px;
+    line-height: 24px;
+}
+  
+.order_desc {
+    color: black;
+    height: 30px;
+    line-height: 30px;
+    font-size: 18px;
+}
+  
+.order_desc_text {
+    color: orange;
+    height: 30px;
+    line-height: 30px;
+    font-size: 18px;
+}
+  
+.order_detail {
+    color: lightgreen;
+    height: 30px;
+    line-height: 30px;
+    font-size: 18px;
+}
+
+ .card_order_view {
+    width: 100%;
+    height: 40px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: white;
+  }
+  
+  .card_order_text {
+    margin-top: 10px;
+    color: #515151;
+    font-size: 15px;
+  }
