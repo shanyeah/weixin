@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, initial-scale=1">
+    <meta name="x5-fullscreen" content="true">
+    <meta name="full-screen" content="yes">
+	<meta content="yes" name="apple-mobile-web-app-capable">
+	<meta content="black" name="apple-mobile-web-app-status-bar-style">
+	<meta content="telephone=no" name="format-detection">
+	<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" /> 
+	<meta http-equiv="Pragma" content="no-cache" /> 
+	<meta http-equiv="Expires" content="0" />
+	<link rel="stylesheet" href="/xcx/mj/common/css/msui.css">    
+    <link rel="stylesheet" href="/xcx/plugins/icon/iconfont.css">
+    <link rel="stylesheet" href="/xcx/mj/common/css/main.css">
+	<title>订座</title>
+</head>
+<body>
+	<div class="page-group">
+        <!-- 单个page ,第一个.page默认被展示-->
+        <div class="page" id="booksteas">            
+            <!-- 工具栏 -->
+            </nav>
+            <!-- 这里是页面内容区 -->
+            <div class="content">                
+                <div class="boxMain bookinfo">
+                    <div class="cor999 bookiten">
+                        <i class="icon iconfont icon-location"></i>
+                        <span id="address"></span>
+                    </div>
+                    <div class="cor999 bookiten">
+                        <i class="icon iconfont icon-phone"></i>
+                        <span id="tel"></span>
+                    </div>
+                    <div class="steasTips">
+                        <span class="fr floor">1F</span>
+                        <div>
+                            <i class="icon iconfont icon-kongxianzuowei"></i> 空闲
+                            <i class="icon iconfont icon-gaojizuowei"></i> 高配
+                            <i class="icon iconfont icon-kongxianzuoweishixin corred"></i> 不可选
+                            <i class="icon iconfont icon-kongxianzuoweishixin corgre"></i> 当前选中
+                        </div>
+                    </div>
+                </div>
+                <!--  -->                
+                <div class="booksteasMain"><!-- 
+                    <div class="fixed"><div class="fixedmain">即将开放</div></div> -->
+                    <div class="bookbox">
+                        <div class="hotbox">
+                            <a class="hat"></a>
+                        </div>
+                        <div class="bookimg">
+                            <div class="fileLoaderIng"></div>
+                        </div>
+                    </div>
+                </div>
+                <!--  -->
+                <div class="boxMain updataBook">
+                    <div><a class="rule">订座规则</a>上机时间：<input type="text" id='datetime-picker' placeholder="请选择上机时间" /><span class="cor999"></span></div>
+                    <div class="">
+                        <a href="" class="button button-fill button-success fr" id="bookOrder">立即订座</a>
+                        <div class="">订座费率：<span class="corblu totlePrice">--</span>元/小时</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script type='text/javascript' src='/xcx/plugins/js/zepto.js' charset='utf-8'></script>
+    <script type='text/javascript' src='/xcx/plugins/js/hammer.min.js' charset='utf-8'></script>
+    <script type='text/javascript' src='/xcx/plugins/js/sm.js' charset='utf-8'></script>
+    <script type="text/javascript" src="/xcx/mj/common/js/common.js?time=20180326"></script>
+    <script type="text/javascript" src="/xcx/mj/page/ESP/js/esp.js?time=201711230001"></script>
+</body>
+</html>

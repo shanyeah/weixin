@@ -1,0 +1,12 @@
+/* pages/index/addReview.wxss */
+.title {
+  margin-left: 10px;
+  margin-top: 10px;
+  font-size: 16px;
+}
+
+.star_icon {
+  margin-right: 6px;
+  width:16px;
+  height:16px;
+}

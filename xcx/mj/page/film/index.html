@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, initial-scale=1">
+	<meta content="yes" name="apple-mobile-web-app-capable">
+	<meta content="black" name="apple-mobile-web-app-status-bar-style">
+	<meta content="telephone=no" name="format-detection">
+	<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" /> 
+	<meta http-equiv="Pragma" content="no-cache" /> 
+	<meta http-equiv="Expires" content="0" />
+	<link rel="stylesheet" href="/xcx/mj/common/css/msui.css">
+    <link rel="stylesheet" href="/xcx/plugins/icon/iconfont.css">
+    <link rel="stylesheet" href="/xcx/mj/common/css/main.css">
+    <link rel="stylesheet" href="/xcx/plugins/swipter-4.1.6/css/swiper.min.css">
+	<title></title>
+    <style type="text/css">
+        #stgName{
+            color: #da1919;
+        }
+        #address{
+            font-size: 0.7rem;
+            overflow-x: auto;
+        }
+        .icon-phone{
+            font-size: 1rem;
+        }
+        .swiper-container{
+            background-color: #5b5b5b;
+            padding: 20px 0 10px 0;
+        }
+        .swiper-slide{
+            width: 96.4px !important;
+            height: 135px;
+        }
+        .swiper-slide img{
+            height: 128px;
+            position: absolute;
+            bottom: 0;
+        }
+        .swiper-slide-active{
+            width: 110px!important;
+        }
+        .swiper-slide-active img{
+            height: 135px;
+            border: solid #ffffff;
+        }
+        .content-padded {
+            font-size: 0.8rem;
+        }
+        .score-color{
+            color: #F07C0A;
+        }
+        .content-block{
+            padding: 0;
+            margin: 0;
+        }
+        .list-block{
+            margin: 0;
+        }
+        .buttons-tab{
+            overflow-x: auto;
+            white-space: nowrap;
+        }
+        ::-webkit-scrollbar {
+            display: none;
+        }
+        .tab-link{
+            font-size: 0.7rem;
+        }
+        .item-content{
+            padding-left: 0.5rem!important;
+        }
+        .item-title{
+            width:100%;
+        }
+        .item-inner{
+            padding-right: 0.5rem !important;
+        }
+        .item-inner .row{
+            margin-left: 0;
+        }
+        .sub-font{
+            font-size: 0.6rem;
+            color: #999;
+            white-space: normal;
+        }
+        .language{
+            font-size: 0.75rem;
+        }
+        .total-price{
+            color: #e54847;
+        }
+        .buy{
+            margin-left: 10px;
+        }
+        .margin-left-0{
+            margin-left: 0 !important;
+        }
+        .row{
+            display: flex;
+            display: -webkit-flex;
+            align-items: center;
+        }
+        .div-time{
+            width: 30%;
+        }
+        .div-add{
+            width: 40%;
+        }
+        .div-price{
+            width: 30%;
+            text-align: right;
+        }
+    </style>
+</head>
+<body>
+	<div class="page-group">
+        <!-- 单个page ,第一个.page默认被展示-->
+        <div class="page page-current">
+            <div class="content">
+                <div class="list-block NewEsplist">
+                    <ul>
+                        <li class="item-content">
+                            <div class="item-inner">
+                                <div class="item-title">
+                                    <div id="stgName"></div>
+                                    <div id="address"></div>
+                                </div>
+                                <div class="item-after tel-icon"><a id="stgPhone"><i class="icon iconfont icon-phone"></i></a></div>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="swiper-container" >
+                    <div class="swiper-wrapper" >
+                        <!--<div class="swiper-slide" data-film_id="11"><img src="//p1.meituan.net/movie/82a01e8f773c273ba10b96b5acb06196381700.jpg.webp@165w_220h_1e_1c" alt="红海行动"></div>-->
+                        <!--<div class="swiper-slide" data-film_id="22"><img src="//p1.meituan.net/movie/efb0a5e3989f45c4f3e22108bcc27ed71037307.jpg.webp@165w_220h_1e_1c" alt="唐人街探案2"></div>-->
+                        <!--<div class="swiper-slide" data-film_id="33"><img src="//p1.meituan.net/movie/65ee71e7b58be81f612f2d28907d5ef01223359.jpg.webp@165w_220h_1e_1c" alt="黑豹"></div>-->
+                        <!--<div class="swiper-slide" data-film_id="44"><img src="//p1.meituan.net/movie/92b3426ac9a67fdcf503d02549e1aa7c3532120.jpg.webp@165w_220h_1e_1c" alt="厉害了，我的国"></div>-->
+                        <!--<div class="swiper-slide" data-film_id="55"><img src="//p1.meituan.net/movie/f042762fa4a975501b69d4f6af6520341035964.jpg.webp@165w_220h_1e_1c" alt="小萝莉的猴神大叔"></div>-->
+                    </div>
+                </div>
+
+                <div class="content-padded">
+                    <span id="filmName"></span>
+                    <span class="score-color"><span id="score"></span></span>
+                </div>
+
+                <div class="buttons-tab fixed-tab" id="plan-title">
+                    <!--<a href="#tab1" class="tab-link active button">明天3月8日</a>-->
+                    <!--<a href="#tab2" class="tab-link button">后天3月9日</a>-->
+                    <!--<a href="#tab3" class="tab-link button">周六3月10日</a>-->
+                    <!--<a href="#tab4" class="tab-link button">周日3月11日</a>-->
+                    <!--<a href="#tab5" class="tab-link button">周一3月12日</a>-->
+                </div>
+                <div class="content-block">
+                    <div class="tabs" id="plan-content">
+                        <!--<div id="tab1" class="tab active">-->
+                            <!--<div class="list-block">-->
+                                <!--<ul>-->
+                                    <!--<li class="item-content">-->
+                                        <!--<div class="item-inner">-->
+                                            <!--<div class="item-title row">-->
+                                                <!--<div class="div-time">-->
+                                                    <!--<div class="startDate">10:10</div>-->
+                                                    <!--<div class="sub-font endDate">12:25结束</div>-->
+                                                <!--</div>-->
+                                                <!--<div class="div-add">-->
+                                                    <!--<div class="language">英语IMAX 3D</div>-->
+                                                    <!--<div class="sub-font room">3号厅-IMAX(大)</div>-->
+                                                <!--</div>-->
+                                                <!--<div class="div-price">-->
+                                                    <!--<div class="price">62.5元</div>-->
+                                                    <!--<div class="sub-font">影院价100元</div>-->
+                                                <!--</div>-->
+                                            <!--</div>-->
+                                            <!--<div class="item-after">-->
+                                                <!--<div class="buy"><a href="selectSeat.html" class="button button-warning external">选座购票</a></div>-->
+                                            <!--</div>-->
+                                        <!--</div>-->
+                                    <!--</li>-->
+                                    <!--<li class="item-content">-->
+                                        <!--<div class="item-inner">-->
+                                            <!--<div class="item-title row">-->
+                                                <!--<div class="div-time">-->
+                                                    <!--<div class="startDate">10:10</div>-->
+                                                    <!--<div class="sub-font endDate">12:25结束</div>-->
+                                                <!--</div>-->
+                                                <!--<div class="div-add">-->
+                                                    <!--<div class="language">英语IMAX 3D</div>-->
+                                                    <!--<div class="sub-font room">3号厅-IMAX(大)</div>-->
+                                                <!--</div>-->
+                                                <!--<div class="div-price">-->
+                                                    <!--<div class="price">62.5元</div>-->
+                                                <!--</div>-->
+                                            <!--</div>-->
+                                            <!--<div class="item-after">-->
+                                                <!--<div class="buy"><a href="selectSeat.html" class="button button-warning external">选座购票</a></div>-->
+                                            <!--</div>-->
+                                        <!--</div>-->
+                                    <!--</li>-->
+                                <!--</ul>-->
+                            <!--</div>-->
+                        <!--</div>-->
+                        <!--<div id="tab2" class="tab">-->
+                            <!--<div class="list-block">-->
+                                <!--<ul>-->
+                                    <!--<li class="item-content">-->
+                                        <!--<div class="row">-->
+                                            <!--<div class="col-50">50%</div>-->
+                                            <!--<div class="col-50">50%</div>-->
+                                        <!--</div>-->
+                                    <!--</li>-->
+                                <!--</ul>-->
+                            <!--</div>-->
+                        <!--</div>-->
+                        <!--<div id="tab3" class="tab">-->
+                            <!--<div class="content-block">-->
+                                <!--<p>This is tab 3 content</p>-->
+                            <!--</div>-->
+                        <!--</div>-->
+                        <!--<div id="tab4" class="tab">-->
+                            <!--<div class="content-block">-->
+                                <!--<p>This is tab 3 content</p>-->
+                            <!--</div>-->
+                        <!--</div>-->
+                        <!--<div id="tab5" class="tab">-->
+                            <!--<div class="content-block">-->
+                                <!--<p>This is tab 3 content</p>-->
+                            <!--</div>-->
+                        <!--</div>-->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script type='text/javascript' src='/xcx/plugins/js/jquery.min.1.11.3.js' charset='utf-8'></script>
+    <script type='text/javascript' src='/xcx/plugins/js/jquery-sm.js' charset='utf-8'></script>
+    <script type='text/javascript' src='/xcx/plugins/swipter-4.1.6/js/swiper.js' charset='utf-8'></script>
+    <script type="text/javascript" src="/xcx/mj/common/js/common.js?time=20180326"></script>
+    <script type="text/javascript" src="/xcx/mj/page/film/js/index.js?time=10"></script>
+</body>
+</html>

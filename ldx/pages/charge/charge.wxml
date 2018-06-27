@@ -1,0 +1,51 @@
+<!--charge.wxml-->
+<view class="container">
+  <view class="zan-panel">
+      <view class="zan-cell">
+          <view class="zan-cell__bd" >充值门店</view>
+          <view class="zan-cell__ft">{{organName}}</view>
+      </view>
+  </view>
+
+  <view class="zan-panel">
+
+      <view wx:if="{{rowList.length == 0}}" class='charge_empty_text'>
+          {{emptyText}}
+      </view>
+      <view wx:for="{{rowList}}" wx:for-item="row">
+          <view class="zan-row">
+             <view wx:for="{{row}}" wx:key="item">
+                <view class="zan-col-8 zan-col" >
+                  <view class="charge_item {{tag == item.tag ? 'selected': ''}}" data-tag="{{item.tag}}" bindtap='switchTag'>
+                      <view class="charge_item_value">{{item.chargeAmount}}元</view>
+                      <view class="charge_item_present">赠送{{item.presentAmount > 0 ? item.presentAmount : '--'}}元</view>
+                  </view>
+                </view>
+            </view>
+          </view>
+      </view>
+  </view>
+
+  <!-- <view class="zan-panel" wx:if="{{tag == 6}}">
+        <input
+          type="text"
+          placeholder="请输入充值金额"
+          bindblur="bindblur"
+          class="zan-field__input zan-cell__bd charge_input"
+          focus="{{focus}}"
+          />
+  </view> -->
+
+  <view class='charge_footer'>
+    <view class="zan-row">
+        <view class="zan-col zan-col-18" >
+          <view class="charge_text">金额: {{chargeValue > 0 ? chargeValue : '--'}} 元</view>
+          <view class="charge_present_text">(赠送 {{presentValue > 0 ? presentValue : '--'}} 元)</view>
+           
+        </view>
+        <view class="zan-col zan-col-6 charge_button {{chargeValue == 0 ? 'disable' : ''}}" bindtap='charge'>
+          充值
+        </view>
+      </view>
+  </view>
+</view>

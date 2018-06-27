@@ -1,0 +1,69 @@
+  <!--index.wxml-->
+<view class="container">
+
+  <view class="swiper-container">
+  <swiper indicator-dots="true" autoplay="true" interval="3000" duration="1000" circular="1000" current="{{swiperCurrent}}" bindchange="swiperChange" class="swiper">
+    <block wx:for="{{adList}}" wx:key="id">
+      <swiper-item>
+          <!-- <text class='swiper_text'>{{item.shortDesc}}</text> -->
+          <image src="{{item.imageUrl}}" class="img" bindtap="swipClick" />
+      </swiper-item>
+    </block>
+  </swiper>
+</view>
+
+    <view class="zan-cell nav_cell">
+      <navigator url="{{hasMJUserInfo ? '../discover/favorite?serviceCode=GOODS&serviceName=点餐' : '../login/login'}}">
+          <view class="nav_item">
+            <image src='../../images/home_food.png' class='nav_icon'></image>
+            <text class='nav_text'>点餐</text>
+          </view>
+        </navigator>
+        <navigator url="{{hasMJUserInfo ? '../discover/favorite?serviceCode=RECHARGE&serviceName=充值' : '../login/login'}}">
+          <view class="nav_item">
+            <image src='../../images/home_charge.png' class='nav_icon'></image>
+            <text class='nav_text'>充值</text>
+          </view>
+        </navigator>
+         <navigator url="{{hasMJUserInfo ? '../mine/mywallet?serviceCode=WALLET&serviceName=钱包' : '../login/login'}}">
+          <view class="nav_item">
+            <image src='../../images/home_wallet.png' class='nav_icon'></image>
+            <text class='nav_text'>钱包</text>
+          </view>
+        </navigator> 
+         <navigator url="{{hasMJUserInfo ? '../discover/favorite?serviceCode=SEAT&serviceName=订座' : '../login/login'}}">
+          <view class="nav_item">
+            <image src='../../images/home_book.png' class='nav_icon'></image>
+            <text class='nav_text'>订座</text>
+          </view>
+        </navigator> 
+      </view>
+
+     <view class="zan-panel">
+      <view class="zan-cell">
+          <view class="zan-cell__bd des_cell" >附近的门店</view>
+          <view class="zan-cell__ft">
+          </view>
+      </view>
+
+      <view wx:for="{{stgList}}" wx:key="item">
+          <navigator url="../discover/stg?organId={{item.organId}}">
+          <view class="stg_cell">
+            <image src="{{item.coverImg}}" class="stg_image" mode="aspectFill"></image>
+            <view style="width: 80%">
+              <view class="stg_distance">{{item.showDistance}}</view>
+              <view class="stg_name">{{item.organName}}</view>
+              <view class="stg_score">{{item.score == 0 ? "暂无评分" : "评分:" + item.score + "分" + " | " + item.reviewCount + "条"}}</view>
+              <view class="stg_desc">消费({{item.netCostDesc}})</view>
+              
+              <view class="stg_desc">{{item.address}}</view>
+              
+            </view>
+          </view>
+          <view class='stg_separator'></view>
+        </navigator>
+      </view>
+    </view> 
+  
+  
+</view>

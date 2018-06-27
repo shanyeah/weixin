@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, initial-scale=1">
+	<meta content="yes" name="apple-mobile-web-app-capable">
+	<meta content="black" name="apple-mobile-web-app-status-bar-style">
+	<meta content="telephone=no" name="format-detection">
+	<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" /> 
+	<meta http-equiv="Pragma" content="no-cache" /> 
+	<meta http-equiv="Expires" content="0" />
+	<link rel="stylesheet" href="/mj/common/css/msui.css">    
+    <link rel="stylesheet" href="/plugins/icon/iconfont.css">
+    <link rel="stylesheet" type="text/css" href="/mj/common/css/main.css">
+	<title>会员卡升级</title>
+</head>
+<body>
+	<div class="page-group">
+        <!-- 单个page ,第一个.page默认被展示-->
+        <div class="page" id="upgrade">
+            <!-- 工具栏 -->
+            <div class="buttons-row viptop-tab">
+                <a href="/mj/page/vip/recharge.html" class="button">会员卡充值</a>
+            </div>
+            <nav class="bar bar-tab"></nav>
+            <!-- 这里是页面内容区 -->
+            <div class="content pull-to-refresh-content" data-ptr-distance="55">
+                <!-- 刷新 -->
+                <div class="pull-to-refresh-layer">
+                    <div class="preloader"></div>
+                    <div class="pull-to-refresh-arrow"></div>
+                </div>
+                <!-- card -->
+                <div class="list-block buycarlist">
+                    <ul>
+                        <li class="item-content">
+                            <div class="item-media"></div>
+                            <div class="item-inner">
+                              <div class="item-title">会员身份证</div>
+                              <div class="item-after" id="idNumber">--</div>
+                            </div>
+                        </li>
+                        <li class="item-content">
+                            <div class="item-media"></div>
+                            <div class="item-inner">
+                              <div class="item-title">会员类型</div>
+                              <div class="item-after">魔杰电竞VIP<span id="cardCategoryName"></span></div>
+                            </div>
+                        </li>
+                        <li class="item-content">
+                            <div class="item-media"></div>
+                            <div class="item-inner">
+                              <div class="item-title">现金账户</div>
+                              <div class="item-after corall" id="cashBalance">--</div>
+                            </div>
+                        </li>
+                        <li class="item-content">
+                            <div class="item-media"></div>
+                            <div class="item-inner">
+                              <div class="item-title">赠送账户</div>
+                              <div class="item-after corall" id="presentBalance">--</div>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+                <div class="upgradebox">
+                    <p class="tc uptitle">升级为<span id="nextLevelCategoryName"></span></p>
+                    <ul>
+                        <li>
+                            <p class="uplist-title">方式一</p>
+                            <div class="item-upgrade">
+                                <p class="up-title">累计充值 <span class="corall" id="nextLevelCategoryTotalNeedCharge">--</span> 元可升级！</p>
+                                <span class="taskloadbox"><span class="tasklonging" style="width: 0"></span><span class="taskload-text" id="currentPercentage">0%</span></span>
+                                <div class="cor999">还缺<span id="leftNeedCharge">--</span>元</div>
+                                <a href="/mj/page/vip/recharge.html" class="button button-fill button-success">去充值</a>
+                            </div>
+                        </li>
+                        <li>
+                            <p class="uplist-title">方式二</p>
+                            <div class="item-upgrade">
+                                <p class="up-title">一次性充满 <span class="corall" id="nextLevelCategoryActiveCharge">--</span> 元可升级！</p>
+                                <div class="cor999">马上升级</div>
+                                <a href="" class="button button-fill button-success forbid" id="wxpay"><i class="icon iconfont icon-group41"></i> 微信支付</a>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script type='text/javascript' src='/plugins/js/zepto.js' charset='utf-8'></script>
+    <script type="text/javascript" src="http://res.wx.qq.com/open/js/jweixin-1.0.0.js"></script>
+    <script type='text/javascript' src='/plugins/js/sm.js' charset='utf-8'></script>
+    <script type="text/javascript" src="/mj/common/js/common.js?time=20180326"></script>
+    <script type="text/javascript" src="/mj/page/vip/js/vip.js?time=201711230001"></script>
+</body>
+</html>

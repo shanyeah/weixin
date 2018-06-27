@@ -1,0 +1,183 @@
+/* pages/discorver/stg.wxss */
+
+.info_cell {
+  display: flex;
+  align-items: initial;
+  flex: 1;
+  width: 100%;
+  height: 80px;
+}
+
+
+.info_desc_col {
+  display: flex;
+  margin-left: 12px;
+  width: 100%;
+} 
+
+.info_mid_col{
+  width: 72%;
+} 
+
+.info_last_col {
+  width: 28%;
+} 
+
+.info_image {
+  width: 70px;
+  height: 80px;
+  background: #eeeeee;
+}
+
+.info_title {
+  font-size: 16px;
+  line-height: 24px;
+  height: 24px;
+}
+
+.info_desc {
+  font-size: 12px;
+  line-height: 16px;
+  color: grey;
+}
+
+.info_seatDesc {
+  margin-top: 10px;
+  
+}
+
+.info_member {
+  font-size: 12px;
+  line-height: 20px;
+  height: 24px;
+  color: orange;
+}
+
+.des_cell {
+  color: #515151;
+}
+
+.star_icon {
+  width:16px;
+  height:16px;
+}
+
+.nav_cell {
+  display:flex;
+}
+
+.nav_item {
+  margin-left: 22px;
+  margin-right: 22px; 
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+}
+
+.nav_icon {
+  width:36px;
+  height:36px;
+  margin-bottom:10px;
+}
+
+.nav_text {
+  color: #515151;
+}
+
+.follow_btn {
+  color: white;
+  background: orange;
+  padding-left:10px;
+  padding-right:10px;
+}
+
+.unfollow_btn {
+  color: grey;
+}
+
+.review_btn {
+  color: white;
+  background: #F65959;
+  height: 24px;
+  border-radius:12px;
+  line-height: 24px;
+}
+
+.review_cell {
+  width: 100%;
+  display: flex;
+}
+
+.review_name {
+  margin-left: 12px;
+  margin-top: 12px;
+  color: #a1a1a1;
+  font-size: 12px;
+}
+
+.review_rating {
+  float: right;
+  display: flex;
+  margin-right: 12px;
+  color: #a1a1a1;
+  font-size: 12px;
+}
+
+.review_like {
+  margin-left: 6px;
+  width:15px;
+  height:15px;
+}
+
+.review_img {
+  margin-left: 12px;
+  margin-top: 12px;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+}
+
+.review_text {
+  margin-left: 12px;
+  margin-top: 6px;
+  color: #000;
+  font-size: 13px;
+}
+
+.review_date {
+  margin-left: 12px;
+  margin-top: 6px;
+  color: #a1a1a1;
+  font-size: 12px;
+}
+
+.review_line {
+  margin-top: 10px;
+  width: 100%;
+  height: 1px;
+  background: #e9e9e9;
+}
+
+.swiper-tab{
+    background: white;
+    width: 100%;
+    border-bottom: 2rpx solid #ccc;
+    text-align: center;
+    height: 88rpx;
+    line-height: 88rpx;
+    display: flex;
+    flex-flow: row;
+    justify-content: space-between;
+}
+.swiper-tab-item{
+    width: 50%; 
+    color:#434343;
+    font-size: 16px;
+}
+.active{
+    color:#F65959;
+    border-bottom: 4rpx solid #F65959;
+}
+swiper{
+  text-align: center;
+}

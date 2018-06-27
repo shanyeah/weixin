@@ -1,0 +1,19 @@
+<!--pages/mine/setting.wxml-->
+<view class="container">
+  <view class="zan-panel">
+        <navigator class="zan-cell zan-cell--access" url="{{'../web/web?url=' + renameUrl + '&idNumber=' + idNumber}}">
+            <image src='../../images/edit.png' class='cell_icon'></image>
+            <view class="zan-cell__bd">修改昵称</view> 
+            <view class="zan-cell__ft"></view> 
+        </navigator>
+        <navigator class="zan-cell zan-cell--access" url="{{'../web/web?url=' + resetpassUrl + '&idNumber=' + idNumber}}">
+            <image src='../../images/lock.png' class='cell_icon'></image>
+            <view class="zan-cell__bd">重设密码</view> 
+            <view class="zan-cell__ft"></view> 
+        </navigator>
+        <view class="zan-cell" bindtap="logout">
+            <image src='../../images/logout.png' class='cell_icon'></image>
+            <view class="zan-cell__bd">退出登录</view> 
+        </view>
+  </view>
+</view>

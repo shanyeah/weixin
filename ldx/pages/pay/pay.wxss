@@ -1,0 +1,16 @@
+/* pages/pay/pay.wxss */
+
+.pay_view {
+  width: 100%;
+  height: 40px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: white;
+}
+
+.pay_text {
+  margin-top: 10px;
+  color: #515151;
+  font-size: 15px;
+}

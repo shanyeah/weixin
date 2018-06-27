@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, initial-scale=1">
+	<meta content="yes" name="apple-mobile-web-app-capable">
+	<meta content="black" name="apple-mobile-web-app-status-bar-style">
+	<meta content="telephone=no" name="format-detection">
+	<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" /> 
+	<meta http-equiv="Pragma" content="no-cache" /> 
+	<meta http-equiv="Expires" content="0" />
+	<link rel="stylesheet" href="/xcx/mj/common/css/msui.css">
+    <link rel="stylesheet" href="/xcx/plugins/icon/iconfont.css">
+    <link rel="stylesheet" href="/xcx/mj/common/css/main.css">
+	<title>选座购票</title>
+    <style type="text/css">
+        #dateStr{
+            font-size: 0.7rem;
+            color: #999;
+        }
+        .list-block{
+            margin:0;
+        }
+        .row {
+            margin-left: 0;
+            display: flex;
+            display: -webkit-flex;
+            align-items: center;
+            padding: 10px 15px;
+            font-size: 0.75rem;
+        }
+        .per-25{
+            width: 25%;
+        }
+        .per-33{
+            width: 33%;
+        }
+        .seat {
+            display: inline-block;
+            width: 0.75rem;
+            height: 0.75rem;
+            line-height: .75rem;
+            margin: 0 .04rem .04rem 0;
+            background-size: 0.75rem 0.75rem;
+        }
+        .seat-intro{
+            padding-left: 0;
+            text-align: center;
+        }
+        .seat-intro i{
+             font-size: 20px;
+        }
+        .dimensional{
+            position: absolute;
+            color: #ffe4a5;
+            background: #d54544;
+            border-radius: 0 0 .8rem .8rem;
+            width: 9rem;
+            left: 50%;
+            margin-left: -4.5rem;
+            font-size: 0.67rem;
+            padding: 0.1rem;
+            text-align: center;
+            height: 1.2rem;
+        }
+        ::-webkit-scrollbar {
+            display: none;
+        }
+        .seats{
+            margin-top:160px;
+            padding-left: 30px;
+        }
+        .seats > div{
+            line-height: 1rem;
+        }
+        .side{
+            position: fixed;
+            left: .08rem;
+            font-size: .24rem;
+            color: #fff;
+            opacity: .6;
+            text-align: center;
+            width: 20px;
+        }
+        .side div{
+            background: #7f7f7f;
+            text-align: center;
+            height: 25px;
+            line-height: 25px;
+            position: absolute;
+            width: 20px;
+            font-size: 0.7rem;
+        }
+        .selected-seat{
+            border-style: solid;
+            border-width: 1px;
+            border-color: #ccc;
+            font-size: 0.7rem;
+            float: left;
+            margin-bottom: 7px;
+            margin-right: 7px;
+            padding: 5px;
+            border-radius: 5px;
+        }
+        .div-select-seat{
+            white-space: normal !important;
+        }
+        .total-price{
+            color: #d54544;
+        }
+        .seat-disabled{
+            color:#FF6666;
+        }
+        .seat-selected{
+            color:#00CC66;
+        }
+        .seatArea{
+            position: absolute;
+            margin-top: 3px;
+        }
+        .seatArea .absolute{
+            position: absolute;
+        }
+        .film-info{
+            position: fixed;
+            width: 100%;
+        }
+        .icon-seat{
+            font-size: 20px;
+        }
+        #filmName{
+            font-weight: bold;
+        }
+        #hallName, #showDateTime{
+            font-size: 0.7rem;
+        }
+        .cancel{
+            float: right;
+            margin-right: -4px;
+            margin-top: -31px;
+            color: #ccc;
+        }
+    </style>
+</head>
+<body>
+	<div class="page-group">
+        <div class="page">
+            <div class="content">
+                <div class="list-block film-info">
+                    <ul>
+                        <li class="item-content">
+                            <div class="item-inner">
+                                <div class="item-title">
+                                    <div id="filmName"></div>
+                                    <div id="hallName"></div>
+                                    <div id="showDateTime"></div>
+                                </div>
+                                <div class="item-after">
+                                    <a href="#" class="button button-fill button-danger" onclick="submit()">提交订单</a>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="item-content">
+                            <div class="item-inner row seat-intro">
+                                <div class="per-33"><i class="icon iconfont icon-kongxianzuowei"></i> 可选</div>
+                                <div class="per-33"><i class="icon iconfont icon-kongxianzuoweishixin seat-selected"></i> 已选</div>
+                                <div class="per-33"><i class="icon iconfont icon-kongxianzuoweishixin seat-disabled"></i> 不可售</div>
+                            </div>
+                        </li>
+                        <li class="item-content seat_price" style="display: none">
+                            <div class="item-inner">
+                                <div class="item-title div-select-seat">
+                                </div>
+                                <div class="item-after">
+                                    <div class="total-price"><span id="total-price">0.00</span>元</div>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                    <div class="dimensional" id="dimensional"></div>
+                </div>
+
+                <div class="seats">
+                    <div style="text-align:center; margin-left: -30px;">荧幕中央</div>
+                    <div class="seatArea">
+                        <!--<div>
+                            <span data-id="1" class="seat"></span>
+                            <span data-id="2" class="seat active"></span>
+                            <span data-id="3" class="seat active"></span>
+                            <span data-id="4" class="seat disabled"></span>
+                            <span data-id="5" class="seat disabled"></span>
+                            <span data-id="6" class="seat disabled"></span>
+                            <span data-id="22" class="seat love"></span>
+                            <span data-id="23" class="seat love"></span>
+                            <span data-id="24" class="seat love"></span>
+                        </div>
+                        <div>
+                            <span data-id="25" class="seat active"></span>
+                            <span data-id="26" class="seat active"></span>
+                            <span data-id="27" class="seat active"></span>
+                            <span data-id="30" class="seat active"></span>
+                            <span data-id="31" class="seat disabled"></span>
+                            <span data-id="32" class="seat disabled"></span>
+                            <span data-id="39" class="seat "></span>
+                            <span data-id="40" class="seat "></span>
+                            <span data-id="41" class="seat love"></span>
+                            <span data-id="47" class="seat love"></span>
+                            <span data-id="48" class="seat love"></span>
+                        </div>
+
+                        <div class="absolute"><i class="icon iconfont icon-kongxianzuowei"></i></div>
+                        <div class="absolute"><i class="icon iconfont icon-kongxianzuoweishixin"></i></div>
+                        <div class="absolute"><i class="icon iconfont icon-kongxianzuoweishixin seat-disabled"></i></div>
+                        <div class="absolute"><i class="icon iconfont icon-kongxianzuoweishixin seat-selected"></i></div>-->
+                    </div>
+                </div>
+
+                <div class="side"></div>
+            </div>
+        </div>
+    </div>
+    <script type='text/javascript' src='/xcx/plugins/js/jquery.min.1.11.3.js' charset='utf-8'></script>
+    <script type='text/javascript' src='/xcx/plugins/js/jquery-sm.js' charset='utf-8'></script>
+    <script type="text/javascript" src="/xcx/mj/common/js/common.js?time=20180326"></script>
+    <script type="text/javascript" src="/xcx/mj/page/film/js/selectSeat.js?time=5"></script>
+</body>
+</html>

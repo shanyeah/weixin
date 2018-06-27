@@ -1,0 +1,88 @@
+<!--card.wxml-->
+<import src="../../zanui-weapp/dist/field/index.wxml" />
+
+<view wx:if="{{needLogin}}" class="container">
+  <image src='../../images/login_logo.png' class='login_logo'></image>
+
+  <view class="zan-panel">
+    <view class="zan-cell zan-field">
+      <input
+        type="number"
+        bindinput="bindMobile"
+        placeholder="请输入手机号"
+        value=''
+        class="zan-field__input zan-cell__bd"/>
+    </view>
+
+    <view class="zan-cell zan-field">
+      <input
+        type="text"
+        bindinput="bindPassword"
+        placeholder="验证码/登录密码"
+        password=true
+        class="zan-field__input zan-cell__bd"/>
+      <view class="zan-cell__ft">
+        <button class="zan-btn zan-btn--small zan-btn--blue" bindtap='getCode'>获取验证码</button>
+      </view>
+    </view>
+  </view>
+
+  <view class="zan-btns" style="margin-top: 20px;">
+    <button class="zan-btn zan-btn--primary" bindtap='login'>登录</button>
+  </view>
+</view>
+
+<view wx:if="{{!needLogin}}" class="container">
+
+    <view class="card_button_view">
+      <view class="card_button" bindtap="qrcodepay"><text>支付码</text></view>
+      <view class="card_button" bindtap="charge"><text>会员卡充值</text></view>
+    </view>
+
+    <!-- <view class="card_view">
+      <image class="card_img" src="{{imageUrl}}" mode="aspectFill"></image>
+    </view>
+    <view class="header_line"></view> -->
+
+    <view wx:if="{{cardList.length == 0}}" class='card_empty_view'>
+      <text class='card_empty_text'>你还没有会员卡, 赶快去开通吧!</text>
+    </view>
+
+    <block wx:for="{{cardList}}" wx:key="item">
+        <view class="zan-panel card-cell">
+          <!-- <navigator class="zan-cell zan-cell--access" url="{{'../web/web?url=' + chargeUrl + '&stgId=' + item.stgId}}">
+              <view class="zan-cell__bd">卡号</view> 
+              <view class="zan-cell__ft">{{item.cardId}}</view>
+          </navigator> -->
+
+          <view class="zan-cell">
+              <view class="zan-cell__bd">门店名称</view> 
+              <view class="zan-cell__ft">{{item.stgName}}</view>
+          </view>
+            
+          <navigator class="zan-cell zan-cell--access" url="{{'../web/web?url=' + consumerDetailUrl + '&stgId=' + item.stgId}}">
+              <view class="zan-cell__bd">现金账户</view> 
+              <view class="zan-cell__ft"><text class="cash_text">{{item.cash}}元</text></view>
+          </navigator>
+
+          <navigator class="zan-cell" url="{{'../web/web?url=' + consumerDetailUrl + '&stgId=' + item.stgId}}">
+              <view class="zan-cell__bd">赠送账户</view> 
+              <view class="zan-cell__ft"><text class="cash_text">{{item.present}}元</text></view>
+          </navigator>
+
+          <navigator class="zan-cell" url="{{'../web/web?url=' + magicDetailUrl + '&stgId=' + item.stgId}}">
+              <view class="zan-cell__bd">魔元账户</view> 
+              <view class="zan-cell__ft"><text class="cash_text">{{item.magicCoin}}魔元</text></view>
+          </navigator>
+
+          <view class="zan-cell">
+              <view class="zan-cell__bd">会员类型</view> 
+              <view class="zan-cell__ft">魔杰电竞VIP{{item.className}}</view>
+          </view>
+        </view>
+    </block>
+
+  <!-- <view class='vip_protocol_view' bindtap='vipProtocol'>{{protocolText}}</view> -->
+  <view style='height:10px'></view>
+  
+</view>

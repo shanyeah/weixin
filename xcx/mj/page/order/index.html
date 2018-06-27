@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, initial-scale=1">
+	<meta content="yes" name="apple-mobile-web-app-capable">
+	<meta content="black" name="apple-mobile-web-app-status-bar-style">
+	<meta content="telephone=no" name="format-detection">
+	<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" /> 
+	<meta http-equiv="Pragma" content="no-cache" /> 
+	<meta http-equiv="Expires" content="0" />
+	<link rel="stylesheet" href="/xcx/mj/common/css/msui.css">    
+    <link rel="stylesheet" href="/xcx/plugins/icon/iconfont.css">
+    <link rel="stylesheet" href="/xcx/mj/common/css/main.css">
+	<title></title>
+	<style type="text/css">
+		.popup-overlay {
+			z-index: 1999;
+		}
+		.esplist li{
+			padding-bottom: 0;
+			margin-bottom: 0;
+		}
+		.Vdata{
+			margin: 0 !important;
+		}
+		.seatInput{
+			margin: 0;
+		}
+		/* .remark-input{
+			width: 100%;
+			border-width: 1px;
+			border-color: #cacaca;
+			border-style: solid;
+			padding: 5px;
+			height: 1.5rem;
+			font-size: .7rem;
+		} */
+
+
+		.TasteView {
+			display: none;
+			position: absolute;
+			top: 0;
+			bottom: 0;
+			left: 0;
+			right: 0; 
+			overflow: auto;
+			-webkit-overflow-scrolling:touch; 
+			background: white;
+			z-index: 3000;
+			margin-bottom: 2.2rem;
+		}
+
+		.PackageView {
+			display: none;
+			position: absolute;
+			top: 0;
+			bottom: 0;
+			left: 0;
+			right: 0; 
+			overflow: auto;
+			-webkit-overflow-scrolling:touch; 
+			background: white;
+			z-index: 3000;
+			margin-bottom: 2.2rem;
+		}
+
+		.GoodDetailImageView { width: 100%; height: 200px; overflow: hidden;background: #eeeeee;}
+		.GoodDetailImageView .img{width:100%;height:120%;}
+
+		.GoodDetailTitleView {
+			width: 100%;
+			height: 80px;
+			border-bottom: 1px solid #eeeeee;
+		}
+
+		.GoodDetailTitle {
+			margin-left: 12px;
+			margin-top: 6px;
+			font-size: 18px;
+			height: 30px;
+			line-height: 30px;
+		}
+
+		.GoodDetailPrice {
+			color: red;
+			font-size: 18px;
+			margin-left: 12px;
+			margin-top: 6px;
+		}
+		
+		.GoodDetailCartBtn {
+			float: right;
+			width: 100px;
+			height: 30px;
+			line-height: 30px;
+			background: orange;
+			border-radius: 15px;
+			color: white;
+			text-align: center;
+			font-size: 14px;
+			margin-top: -30px;
+			margin-right: 12px;
+		}
+
+		.GoodDetailTagTitle {
+			margin-left: 12px;
+			margin-top: 6px;
+			font-size: 14px;
+			color: gray;
+		}
+
+		.GoodDetailTagView {
+			display: flex;
+			margin-left: 12px;
+			margin-top: 6px;
+		}
+
+		.GoodDetailTag {
+			width: 80px;
+			height: 30px;
+			line-height: 30px;
+			border-radius: 15px;
+			border: 1px solid lightgray;
+			color: #515151;
+			text-align: center;
+			font-size: 14px;
+			margin-right: 8px;
+		}
+
+		.GoodDetailTag.selected {
+			border: 1px solid orange;
+			color: orange;
+		}
+
+		.GoodPackageTitle {
+			text-align: center;
+			font-size: 15px;
+			color: #515151;
+			background: #eeeeee;
+		}
+
+		.GoodPackageView {
+			margin-top: 6px;
+			width: 100%;
+			overflow-x: scroll;
+			overflow-y: hidden;
+			white-space: nowrap;
+			height: 100px;
+		}
+
+		.GoodPackageItem {
+			display:inline-block;
+			box-sizing: border-box;
+			width:33%;
+			height: 100px;
+			text-align: center;
+		}
+		
+		.GoodPackageItemImageView {
+			position: relative;
+			overflow: hidden;
+			width: 60px;
+			height: 60px;
+			background: #eeeeee;
+			margin: 6px auto;
+			border-radius: 6px;
+		}
+
+		.GoodPackageItemImageView.selected {
+			border: 1px solid orange;
+		}
+
+		.GoodPackageItemTitle {
+			height: 20px;
+			line-height: 20px;
+			color: #515151;
+		}
+
+		/*  */
+		.GoodPackageChildView {
+			padding-top: 6px;
+			margin-top: 6px;
+			width: 100%;
+			overflow-x: scroll;
+			overflow-y: hidden;
+			white-space: nowrap;
+			height: 100px;
+			border-top: 1px solid #eeeeee;
+		}
+
+		.GoodPackageChildItem {
+			display:inline-block;
+			box-sizing: border-box;
+			width:33%;
+			height: 100px;
+			text-align: center;
+		}
+		
+		.GoodPackageChildItemImageView {
+			width: 60px;
+			height: 60px;
+			background: #eeeeee;
+			margin: 6px auto;
+			border-radius: 6px;
+		}
+
+		.GoodPackageChildItemImageView.selected {
+			border: 1px solid orange;
+		}
+
+		.GoodPackageChildItemTitle {
+			height: 20px;
+			line-height: 20px;
+			color: #515151;
+		}
+
+		.GoodPackageItemChange {
+			position: absolute;
+			right: 0;
+			bottom: 0;
+			width: 24px;
+			height: 24px;
+			background: #1890ff;
+			color: white;
+			font-size: 14px;
+			line-height: 24px;
+			border-bottom-right-radius: 4px;
+		}
+
+		.order_close_btn {
+			width: 32px;
+			height: 32px;
+			margin-left: 12px;
+			margin-top: 12px;
+			position: absolute;
+			z-index: 9999;
+
+		}
+	</style>
+</head>
+<body class="order_v2"> 
+	<div class="page-group">
+        <div class="page" id="myOrder">
+            <!-- 这里是页面内容区 -->
+            <div class="content infinite-scroll" data-ptr-distance="55">
+                <div class="orderTop">
+                	<div class="search flexbox">
+                		<div class="list"><i class="icon iconfont icon-list"></i></div>
+                		<div class="searchB flexbox" id="form"><i class="icon iconfont icon-search"></i>
+                			<form class="filterform" action="#"><input class="filterinput" type="text" placeholder="输入关键字"/></form>
+                		</div>
+                	</div>
+                </div>
+                <!-- 我的点餐 -->
+				<div class="myfood">
+					<div class="btn myfoodbtn">
+						<span class="fr">
+							<!-- <a href="/mj/page/my/myorder.html" class="external corfff">我的订单</a> -->
+							<span class="deleteAll">清空 <i class="icon iconfont icon-delete"></i></span>
+						</span>
+						<span class="fl"><i class="icon iconfont icon-yuding"></i> 列表</span>
+					</div>
+					<div class="valuation">
+						<div class="MFmain"></div>
+						<div class="Vdata">
+							<!-- <p>订单金额：<span class="noPrice">0</span><em>.00 RMB</em></p>
+							<p>折扣减免：<span class="discount">0</span><em>.00 RMB</em></p> -->
+							<!-- <p class="">合计支付：<span class="totalprices">0</span><em> RMB</em></p>
+							<div class="tips">立即下单请扫描桌号</div> -->
+							<!-- <div class="seatInput">送餐桌号：<input placeholder="请输入桌号" id="importSeat"></div>
+							<div><textarea class="remark-input" placeholder="备注信息（50个字以内）"></textarea></div> -->
+						</div>
+						<!-- <a class="btn grey" id="submitOrder">立即下单</a> -->
+						
+						<div style="height: 2rem;"></div>
+					</div>
+				</div>	
+				<div class="MainCenter">
+					<div class="categoryMain">
+					</div>	
+					<div class="orderListBox"></div>	
+				</div>
+				<div class="gouweuche displaybox">
+					<div class="GWCleft boxflex1"><i class="icon iconfont icon-cart"><span class="number" style="display: none;"></span></i>￥<span class="mun"></span></div>
+					<div class="GWCright boxflex1">立即下单
+						<a href="" class="btn" id="submitOrder">立即下单</a>
+					</div>
+				</div>
+			</div>
+
+			<div class="popup stg-list-page">
+				<div class="content" data-ptr-distance="55" data-distance="100">
+					<ul class="esplist"></ul>
+				</div>
+			</div>
+        </div>
+    </div>  	
+    
+	
+	
+	<!-- 选择支付方式 -->
+	<div class="paybox">
+		<div class="payList active" data-payType="2">
+			<span>✔</span>
+			<p>会员卡支付</p>			
+		</div>
+		<div class="payList" data-payType="1" data-payTool="91">
+			<span>✔</span>
+			<p>微信支付</p>
+		</div>
+		<a class="btn" id="payChooseBtn">确认支付</a>
+	</div>
+
+	<!-- 口味修改 -->
+	<div class="TasteView infinite-scroll">
+		 <img class="order_close_btn" src="../../common/images/order_back.png"/>
+		 <div class="GoodDetailImageView">
+		 </div>
+		 <div class="GoodDetailContent">
+		 </div>
+	</div>
+
+	<!-- 套餐修改 -->
+	<div class="PackageView infinite-scroll">
+			<img class="order_close_btn" src="../../common/images/order_back.png"/>
+			<div class="GoodDetailImageView">
+			</div>
+			<div class="GoodPackageTitle">套餐详情</div>
+			<div class="GoodDetailContent">
+				<div class="GoodPackageView">
+					<div class="GoodPackageItem">
+						<div class="GoodPackageItemImageView"></div>
+						<div class="GoodPackageItemTitle">123</div>
+					</div>
+					<div class="GoodPackageItem">
+							<div class="GoodPackageItemImageView"></div>
+							<div class="GoodPackageItemTitle">456</div>
+					</div>
+					
+				</div>
+			</div>
+	</div>
+
+
+	<div class="PopBox editPackage">
+		<div class="PBtitle">套餐</div>
+		<div class="PBcenter"> 
+			<ul class="EPbox"></ul>
+		</div>
+		<div class="PBbottom displaybox">
+			<a class="PBbtn boxflex1 PBbtnl modificationBTN">确定</a>
+			<a class="PBbtn boxflex1 PBfalse">取消</a>
+		</div>
+	</div>
+
+	<div class="modal seatPup" style="display: none; margin-top: -72px;">
+		<div class="closes">×</div>
+		<div class="modal-inner">
+			<div class="modal-text">是否确认送到当前座位：<span id="seatName"></span></div>
+		</div>
+		<div class="modal-buttons ">
+			<span class="modal-button seatL">换座位</span>
+			<span class="modal-button seatR">确定</span>
+		</div>
+	</div>
+</body>
+	<script type='text/javascript' src='/xcx/plugins/js/jquery.min.1.11.3.js' charset='utf-8'></script>
+    <script type='text/javascript' src='/xcx/plugins/js/jquery-sm.js' charset='utf-8'></script>
+    <script type="text/javascript" src="https://res.wx.qq.com/open/js/jweixin-1.3.0.js"></script>
+	<script type="text/javascript" src="/xcx/mj/common/js/common.js?time=201806150002"></script>
+	<script type="text/javascript" src="/xcx/mj/page/order/js/order.js?time=201805050001"></script>
+</html>

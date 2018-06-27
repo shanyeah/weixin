@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, initial-scale=1">
+	<meta content="yes" name="apple-mobile-web-app-capable">
+	<meta content="black" name="apple-mobile-web-app-status-bar-style">
+	<meta content="telephone=no" name="format-detection">
+	<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" /> 
+	<meta http-equiv="Pragma" content="no-cache" /> 
+	<meta http-equiv="Expires" content="0" />
+	<link rel="stylesheet" href="/xcx/mj/common/css/msui.css">    
+    <link rel="stylesheet" href="/xcx/plugins/icon/iconfont.css">
+    <link rel="stylesheet" href="/xcx/mj/common/css/main.css">
+	<title>点餐支付</title>
+	<style type="text/css">
+		.goodsTag{
+			font-size: .7rem;
+			color: #cacaca;
+			height: 1rem;
+		}
+		.catatitle{
+			margin: 0;
+		}
+
+		.order_title {
+			text-align: center;
+			line-height: 36px;
+			background: white;
+			border-bottom: 1px solid #f1f1f1;
+		}
+
+		.goods_container {
+			background: white;
+			width: 100%;
+			display: grid;  
+			grid-template-columns: auto 14% 14%;
+			grid-template-rows: auto;
+			line-height: 40px;
+		}
+
+		.goods_container.child {
+			line-height: 24px;
+		}
+
+		.goods_line {
+			width: 100%;
+			height: 1px;
+			border-bottom: 1px solid #f1f1f1;
+		}
+
+		.goods_name {
+			margin-left: 12px;
+			font-size: 16px;
+			color: black;
+		}
+
+		.goods_child_name {
+			margin-left: 12px;
+			font-size: 14px;
+			color: gray;
+		}
+
+		.goods_count {
+			font-size: 14px;
+			color: gray;
+		}
+
+		.goods_price {
+			font-size: 16px;
+		}
+	</style>
+</head>
+<body> 
+	<div class="page-group">
+        <div class="page" id="consumerdetails">
+            <!-- 这里是页面内容区 -->
+            <div class="content infinite-scroll" data-ptr-distance="55">  
+		        <div class="payMain"><!-- 
+		        	<h1 class="bigTitle">订单商品列表</h1> -->
+
+		        	<div class="DDdetaiUL">
+						<div class="order_title">网吧名称：<span class="stgNameSpan"></span></div>
+		        	</div>
+		        	<div class="xiaoji">小计：<span id="price" class="corred"></span></div>
+		        	<div class="xiaoji vipshow">会员折扣价：<span class="totlePrace corred"></span></div>
+		        	<!-- <div class="xiaoji">座位号：<span class="setspan"></span></div> -->
+		        	<!-- 
+			        <div class="Vdata payTotle">总金额：￥<span id="price"></span>
+				        <p id="discount" class="vipshow"></p>
+				        <p class="vipshow">实付款：￥<span class="totlePrace corred ">--</span></p>
+				        <p class="corred vipshow tc" style="display: none;">微信支付不享受折扣</p>
+			        </div>
+			        
+		        	<div class="tc sethao">座位号：<span class="setspan"></span></div> -->
+		        </div>
+
+				<div>
+					<div class="seatInput">送餐桌号：
+						<input placeholder="请输入桌号" id="importSeat">
+					</div>
+					<div>
+						<textarea style="width:100%;font-size: 14px;" class="remark-input" id="remarkText" placeholder="备注信息（50个字以内）"></textarea>
+					</div>
+				</div>
+                <!-- 选择支付方式 -->
+				<div class="paybox appPay">
+					<div class="payList active" data-payType="2">
+						<span>✔</span>
+						<p>会员卡支付</p>			
+					</div>
+					<div class="payList" data-payType="1" data-payTool="91">
+						<span>✔</span>
+						<p>微信支付</p>			
+					</div>
+					<a class="btn" id="payChooseBtn">确认支付</a>
+				</div>
+			</div>
+        </div>
+    </div>  
+</body>
+    <script type='text/javascript' src='/xcx/plugins/js/zepto.js' charset='utf-8'></script>
+    <script type='text/javascript' src='/xcx/plugins/js/sm.js' charset='utf-8'></script>
+    <script type="text/javascript" src="https://res.wx.qq.com/open/js/jweixin-1.3.0.js"></script>
+	<script type="text/javascript" src="/xcx/mj/common/js/common.js?time=20180326"></script>
+	<script type="text/javascript" src="/xcx/mj/page/order/js/pay.js?time=201711230001"></script>
+</html>

@@ -1,0 +1,24 @@
+<!--pages/discover/stglist.wxml-->
+<view class="container">
+      <view class="search_view">
+        <view class='search_bar'> 
+           <input style='margin-left:6px;height:32px;' placeholder="搜索" confirm-type="search" bindinput="handleInput" bindconfirm="search"/> 
+        </view>
+
+      </view>
+      <view wx:for="{{stgList}}" wx:key="item">
+          <view class="stg_cell" data-id="{{item.organId}}" bindtap='stgClick'>
+            <image src="{{item.coverImg}}" class="stg_image" mode="aspectFill"></image>
+            <view style="width: 80%">
+              <view class="stg_distance">{{item.showDistance}}</view>
+              <view class="stg_name">{{item.organName}}</view>
+              <view class="stg_score">{{item.score == 0 ? "暂无评分" : "评分:" + item.score + "分" + " | " + item.reviewCount + "条"}}</view>
+              <view class="stg_desc">消费({{item.netCostDesc}})</view>
+              
+              <view class="stg_desc">{{item.address}}</view>
+              
+            </view>
+          </view>
+          <view class='stg_separator'></view>
+    </view>
+</view>

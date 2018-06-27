@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, initial-scale=1">
+	<meta content="yes" name="apple-mobile-web-app-capable">
+	<meta content="black" name="apple-mobile-web-app-status-bar-style">
+	<meta content="telephone=no" name="format-detection">
+	<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" /> 
+	<meta http-equiv="Pragma" content="no-cache" /> 
+	<meta http-equiv="Expires" content="0" />
+	<link rel="stylesheet" href="/mj/common/css/msui.css">    
+    <link rel="stylesheet" href="/plugins/icon/iconfont.css">
+    <link rel="stylesheet" href="/mj/common/css/main.css">
+    <style type="text/css">
+        .btn-exchange{
+            display: inline-block;
+            width: 25%;
+        }
+        .modal-title {
+            font-weight: 500;
+            font-size: 0.9rem;
+            text-align: center;
+            margin-bottom: 10px;
+        }
+        .modal-text{
+            font-size:0.8rem;
+        }
+        .modal-inner{
+            padding-bottom: 1px;
+        }
+        .detail-title {
+            border-top: 1px dotted #1c1d1f;
+            padding-top: 10px;
+            text-align: left;
+        }
+        .item-row{
+            margin-bottom: 0.5rem;
+        }
+        .item-name {
+            float: left;
+            text-align: right;
+            width: 100px;
+        }
+        .item-value {
+            position: relative;
+            padding-left: 100px;
+            text-align: left;
+        }
+        .item-tips{
+            color: rgba(245, 15, 15, 0.77);
+            font-size: .7rem;
+        }
+        .item-value select{
+            width: 100%;
+            padding: 4px 2px;
+        }
+        .item-value input{
+            width: 100%;
+            padding: 4px 6px;
+        }
+        .modalClass{
+            width: 17rem;
+            margin-left: -8.5rem;
+        }
+    </style>
+	<title>魔元账户明细</title>
+</head>
+<body>
+	<div class="page-group">
+        <div class="page" id="consumerdetails">
+            <!-- 这里是页面内容区 -->
+            <div class="content infinite-scroll infinite-scroll-bottom" data-ptr-distance="55">
+                <div class="consumer">
+                    <div class="consuDetails displaybox">
+                        <div class="boxflex1">魔元：<span class="xianjin" id="magicCoin">0.00</span></div>
+                    </div>
+                    <div class="">
+                        <a class="button button-fill button-success btn-exchange" id="presentExchange">兑换</a>
+                    </div>
+                </div>
+                <!--  -->
+                <div class="card">
+                    <div class="card-header">
+                        <span class="icon iconfont icon-yue ">近期魔元变动</span>
+                    </div>
+                    <div class="list-block consumerdetailsCard">
+                        <ul>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script type='text/javascript' src='/plugins/js/zepto.js' charset='utf-8'></script>
+    <script type='text/javascript' src='/plugins/js/sm.js' charset='utf-8'></script>
+    <script type="text/javascript" src="/mj/common/js/common.js?time=20180326"></script>
+    <script type="text/javascript" src="/mj/page/my/js/my.js?time=201711290001"></script>
+</body>
+</html>

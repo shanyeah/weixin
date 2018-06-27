@@ -1,0 +1,28 @@
+/**app.wxss**/
+@import "zanui-weapp/dist/index.wxss";
+
+
+.container {
+  background: #f9f9f9;
+  overflow: hidden;
+  min-height: 100vh;
+  box-sizing: border-box;
+  padding: 0;
+}
+
+.container::before {
+  position: fixed;
+  top: 0;
+  left: 0;
+  content: ' ';
+  width: 100%;
+  height: 1rpx;
+  background-color: #e2e2e2;
+  z-index: 5;
+}
+
+.zan-btn--blue {
+  color:#fff;
+  background-color:#3B92FC;
+  border-color: #3B92FC;
+}

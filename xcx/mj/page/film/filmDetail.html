@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, initial-scale=1">
+	<meta content="yes" name="apple-mobile-web-app-capable">
+	<meta content="black" name="apple-mobile-web-app-status-bar-style">
+	<meta content="telephone=no" name="format-detection">
+	<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" /> 
+	<meta http-equiv="Pragma" content="no-cache" /> 
+	<meta http-equiv="Expires" content="0" />
+	<link rel="stylesheet" href="/xcx/mj/common/css/msui.css">
+    <link rel="stylesheet" href="/xcx/plugins/icon/iconfont.css">
+    <link rel="stylesheet" href="/xcx/mj/common/css/main.css">
+	<title>影片详情</title>
+    <style type="text/css">
+        .header-name{
+            background-color: #e54847 !important;
+            color: #fff;
+            text-align: center;
+            font-size: 0.85rem;
+            height: 2rem;
+            line-height: 2rem;
+        }
+        .simple-info{
+            padding: 20px;
+            margin-left: 0;
+            position: relative;
+        }
+        .row{
+            margin-left: 0;
+        }
+        .movie-background{
+            top: 0px;
+            left: 0;
+            right: 0;
+            bottom: 10px;
+            width: 100%;
+            z-index: -1;
+            position: absolute;
+            filter: blur(.6rem);
+            -webkit-filter: blur(.6rem);
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position-y: 40%;
+        }
+        .movie-filter{
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            width: 100%;
+            position: absolute;
+            background-color: #40454d;
+            opacity: .55;
+        }
+        .text-info{
+            position: relative;
+        }
+        .movie-div{
+            margin-left: 0 !important;
+        }
+        .movie-img{
+            margin-left: 0 !important;
+            width: 122px;
+        }
+        .movie-img img{
+            border: solid 1px #f0f2f3;
+            width: 120px;
+        }
+        .movie-content{
+            padding-left: 138px;
+            color: #fff;
+            line-height: 1rem;
+            font-size: 0.7rem;
+        }
+        .div-film-name{
+            font-size: 0.8rem;
+        }
+        .div-book{
+            padding: 10px 15px;
+            background-color: #fff;
+        }
+        .div-book a{
+            font-size: 0.8rem;
+            height: 2rem;
+            line-height: 2rem !important;
+            background-color: #e54847 !important;
+            color: white;
+        }
+        .film-desc{
+            padding: 0 15px 0 15px;
+            font-size: 0.7rem;
+            font-weight: 100;
+            background-color: #fff;
+        }
+        .show-more{
+            text-align: center;
+            background-color: #fff;
+        }
+        .fix-height{
+            height: 100px;
+            overflow: hidden;
+        }
+        .imdbScore{
+            color: #ffc600;
+        }
+
+
+
+        #film-plan .content-block{
+            padding: 0;
+            margin: 0;
+        }
+        #film-plan .list-block{
+            margin: 0;
+        }
+        #film-plan .buttons-tab{
+            overflow-x: auto;
+            white-space: nowrap;
+        }
+        #film-plan ::-webkit-scrollbar {
+            display: none;
+        }
+        #film-plan .tab-link{
+            font-size: 0.7rem;
+        }
+        #film-plan .item-content{
+            padding-left: 0.5rem!important;
+        }
+        #film-plan .item-title{
+            width:100%;
+        }
+        #film-plan .item-inner{
+            padding-right: 0.5rem !important;
+        }
+        #film-plan .item-inner .row{
+            margin-left: 0;
+        }
+        #film-plan .sub-font{
+            font-size: 0.6rem;
+            color: #999;
+        }
+        #film-plan .language{
+            font-size: 0.75rem;
+        }
+        #film-plan .total-price{
+            color: #e54847;
+        }
+        #film-plan .buy{
+            margin-left: 10px;
+        }
+        #film-plan .margin-left-0{
+            margin-left: 0 !important;
+        }
+        #film-plan .row{
+            display: flex;
+            display: -webkit-flex;
+            align-items: center;
+        }
+        #film-plan .div-time{
+            width: 25%;
+        }
+        #film-plan .div-add{
+            width: 45%;
+        }
+        #film-plan .div-price{
+            width: 30%;
+            text-align: right;
+        }
+        #film-plan #plan-title{
+            height: 40px;
+        }
+    </style>
+</head>
+<body>
+	<div class="page-group" id="main-page">
+        <div class="page page-current">
+            <div class="content">
+                <div class="header-name"></div>
+                <div class="simple-info">
+                    <div class="movie-background"></div>
+                    <div class="movie-filter"></div>
+                    <div class="row text-info">
+                        <div class="col-40 movie-div">
+                            <div class="movie-img"><img src=""></div>
+                        </div>
+                        <div class="movie-content">
+                            <div class="div-film-name"><span class="filmName"></span> <span class="imdbScore"></span></div>
+                            <div>视觉：<span class="dimensional"></span></div>
+                            <div>语言/时长：<span class="lang"></span> / <span class="duration"></span> 分钟</div>
+                            <div>导演：<span class="directors"></span></div>
+                            <div>演员：<span class="actors"></span></div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="div-book"><a href="#" class="button button-fill btn-buy">立即购票</a></div>
+                <div class="film-desc fix-height"></div>
+                <div class="show-more"><i class="icon iconfont icon-unfold"></i></div>
+            </div>
+        </div>
+    </div>
+    <script type='text/javascript' src='/xcx/plugins/js/jquery.min.1.11.3.js' charset='utf-8'></script>
+    <script type='text/javascript' src='/xcx/plugins/js/jquery-sm.js' charset='utf-8'></script>
+    <script type="text/javascript" src="/xcx/mj/common/js/common.js?time=20180326"></script>
+    <script type="text/javascript" src="/xcx/mj/page/film/js/filmDetail.js?time=0"></script>
+</body>
+</html>

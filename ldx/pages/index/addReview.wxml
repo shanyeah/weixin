@@ -1,0 +1,55 @@
+<!--pages/index/addReview.wxml-->
+<import src="../../zanui-weapp/dist/toast/index.wxml" />
+
+<view class="container">
+  <view class="title">填写您的评价和评分</view>
+  <view class="zan-panel">
+    <view class="zan-cell">
+          <view class="zan-cell__bd">
+            <textarea bindinput="bindinput"></textarea>
+          </view>
+    </view>
+
+    <view class="zan-cell">
+          <view class="zan-cell__bd">
+              <view style="display:flex; height:30px">
+                <text style="margin-right:6px">服务:</text>
+                <view wx:for="{{stars}}" data-tag="0" data-rate="{{item}}" bindtap="tapStar">
+                  <image class="star_icon" src="{{serviceScore >= item ? '../../images/star.png': '../../images/star_empty.png'}}" ></image>
+                </view>
+                <text style="margin-left:6px">{{serviceScore * 2}}分</text>
+              </view>
+
+              <view style="display:flex; height:30px">
+                <text style="margin-right:6px">环境:</text>
+                <view wx:for="{{stars}}" data-tag="1" data-rate="{{item}}" bindtap="tapStar">
+                  <image class="star_icon" src="{{envScore >= item ? '../../images/star.png': '../../images/star_empty.png'}}" ></image>
+                </view>
+                <text style="margin-left:6px">{{envScore * 2}}分</text>
+              </view>
+
+              <view style="display:flex; height:30px">
+                <text style="margin-right:6px">网速:</text>
+                <view wx:for="{{stars}}" data-tag="2" data-rate="{{item}}" bindtap="tapStar">
+                  <image class="star_icon" src="{{speedScore >= item ? '../../images/star.png': '../../images/star_empty.png'}}" ></image>
+                </view>
+                <text style="margin-left:6px">{{speedScore * 2}}分</text>
+              </view>
+
+              <view style="display:flex; height:30px">
+                <text style="margin-right:6px">配置:</text>
+                <view wx:for="{{stars}}" data-tag="3" data-rate="{{item}}" bindtap="tapStar">
+                  <image class="star_icon" src="{{configScore >= item ? '../../images/star.png': '../../images/star_empty.png'}}" ></image>
+                </view>
+                <text style="margin-left:6px">{{configScore * 2}}分</text>
+              </view>
+         </view>
+    </view>
+  </view>
+
+  <view class="zan-btns" style="margin-top: 20px;">
+    <button class="zan-btn zan-btn--primary" bindtap="done">提交</button>
+  </view>
+</view>
+
+<template is="zan-toast" data="{{ zanToast }}"></template>

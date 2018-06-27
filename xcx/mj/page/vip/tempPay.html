@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, initial-scale=1">
+	<meta content="yes" name="apple-mobile-web-app-capable">
+	<meta content="black" name="apple-mobile-web-app-status-bar-style">
+	<meta content="telephone=no" name="format-detection">
+	<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" /> 
+	<meta http-equiv="Pragma" content="no-cache" /> 
+	<meta http-equiv="Expires" content="0" />
+	<link rel="stylesheet" href="/mj/common/css/msui.css">    
+    <link rel="stylesheet" href="/plugins/icon/iconfont.css">
+    <link rel="stylesheet" href="/mj/common/css/main.css">
+	<title>微信支付</title>
+	<style type="text/css">
+
+	</style>
+</head>
+<body> 
+	<div class="page-group">
+        <div class="page" id="consumerdetails">
+            <!-- 这里是页面内容区 -->
+            <div class="content">
+				<div class="content-block">
+					<div><a href="#" class="button button-fill button-success button-big button-round">微信支付</a></div>
+				</div>
+			</div>
+        </div>
+    </div>  
+</body>
+
+	<script type='text/javascript' src='/plugins/js/jquery.min.1.11.3.js' charset='utf-8'></script>
+	<script type='text/javascript' src='/plugins/js/jquery-sm.js' charset='utf-8'></script>
+    <script type="text/javascript" src="https://res.wx.qq.com/open/js/jweixin-1.3.0.js"></script>
+	<script type="text/javascript" src="/mj/common/js/common.js?time=20180326"></script>
+
+	<script>
+        $(function(){
+            $('.button-success').click(function(){
+                var prepayId = 'wx201803201512538797b9ab390761835171';
+                wxPay(prepayId);
+			})
+        });
+
+        function wxPay(prepayId){
+            $.showPreloader('等待支付');
+			ajaxCGI({//微信支付调起
+				url:'wxpayconfig',
+				dire:'pay/public/',
+				jsonData:{
+				    prepayId:prepayId
+				},
+				success:function(data){
+					wx.chooseWXPay({
+						timestamp: data.timestamp,
+						nonceStr: data.nonceStr,
+						package: data.packageStr,
+						signType: data.signType,
+						paySign: data.paySign,
+						success: function (res) {
+                            $.hidePreloader();
+                            $('button-success').html('支付完成');
+						},
+						cancel: function () {
+						},
+						error: function (e) {
+                            $.hidePreloader();
+							$.alert('支付失败：'+JSON.stringify(e));
+						}
+					});
+				},
+				error:function(data) {
+                    $.hidePreloader();
+				}
+			});
+        }
+	</script>
+</html>

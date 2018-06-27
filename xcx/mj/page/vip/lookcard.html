@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, initial-scale=1">
+	<meta content="yes" name="apple-mobile-web-app-capable">
+	<meta content="black" name="apple-mobile-web-app-status-bar-style">
+	<meta content="telephone=no" name="format-detection">
+	<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" /> 
+	<meta http-equiv="Pragma" content="no-cache" /> 
+	<meta http-equiv="Expires" content="0" />
+	<link rel="stylesheet" href="/mj/common/css/msui.css">    
+    <link rel="stylesheet" href="/plugins/icon/iconfont.css">
+    <link rel="stylesheet" href="/mj/common/css/main.css">
+	<title>会员卡查看</title>
+    <style type="text/css">
+        .protocol{
+            text-align: center;
+            margin-bottom: 10px;
+            font-size: 0.6rem;
+        }
+    </style>
+</head>
+<body>
+	<div class="page-group">
+        <!-- 单个page ,第一个.page默认被展示-->
+        <div class="page" id="lookcard" >
+            <!-- 工具栏 -->
+            <div class="buttons-row viptop-tab">
+                <a href="/mj/page/vip/rcodepay.html" class="button external">支付码</a>
+                <a href="#" class="button" id="cardChargeLink">会员卡充值</a>
+            </div>
+            <!-- 工具栏 -->
+            <nav class="bar bar-tab"></nav>
+
+            <!-- 这里是页面内容区 -->
+            <div class="content">
+                <!-- card -->
+                <div class="cardbox">
+                    <div class="cardImgBox marginAuto"></div>
+                </div>
+
+                <div class="blankTips" style="display:block; ">加载中...</div>
+
+                <div class="list-block cards-list buycarlist">
+
+                </div>
+
+                <div class="cardQY" style="display: none;">
+                    <div class="cardQY-title">会员权益</div>
+                    <div class="displaybox cardQY-list">
+                        <!-- <div class="boxalign boxflex1">无权益</div> -->
+                    </div>
+                </div>
+
+                <div class="protocol"><a href="/mj/page/vip/protocol.html" class="external">&lt;&lt;魔杰电竞用户协议&gt;&gt;</a></div>
+            </div>
+        </div>
+    </div>
+
+    <div class="card" id="template" style="display: none; margin: 0.5rem;">
+        <div class="card-content">
+            <ul>
+                <li>
+                    <a name="chargeLink" href="javascript:void(0)" class="item-content item-link external">
+                        <div class="item-media"></div>
+                        <div class="item-inner">
+                            <div class="item-title">卡号</div>
+                            <div class="item-after"><span name="id"></span></div>
+                        </div>
+                    </a>
+                </li>
+                <li class="item-content">
+                    <div class="item-media"></div>
+                    <div class="item-inner">
+                        <div class="item-title">网咖名称</div>
+                        <div class="item-after"><span name="stgName"></span></div>
+                    </div>
+                <li>
+                    <a name="cashAccountLink" href="#" class="item-content item-link external">
+                        <div class="item-media"></div>
+                        <div class="item-inner">
+                            <div class="item-title">现金账户</div>
+                            <div class="item-after corall"><span name="cashBalance"></span></div>
+                        </div>
+                    </a>
+                </li>
+                <li>
+                    <a name="presentAccountLink" href="#" class="item-content item-link external">
+                        <div class="item-media"></div>
+                        <div class="item-inner">
+                            <div class="item-title">赠送账户</div>
+                            <div class="item-after corall"><span name="presentBalance"></span></div>
+                        </div>
+                    </a>
+                </li>
+                <li>
+                    <a name="magicAccountLink" href="#" class="item-content item-link external">
+                        <div class="item-media"></div>
+                        <div class="item-inner">
+                            <div class="item-title">魔元账户</div>
+                            <div class="item-after corall"><span name="magicCoin"></span></div>
+                        </div>
+                    </a>
+                </li>
+                <li class="item-content">
+                    <div class="item-media"></div>
+                    <div class="item-inner">
+                        <div class="item-title">会员卡类型</div>
+                        <div class="item-after">魔杰电竞VIP<span name="cardCategoryName"></span></div>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    <script type='text/javascript' src='/plugins/js/zepto.js' charset='utf-8'></script>
+    <script type='text/javascript' src='/plugins/js/sm.js' charset='utf-8'></script>
+    <script type="text/javascript" src="https://res.wx.qq.com/open/js/jweixin-1.3.0.js"></script>
+    <script type="text/javascript" src="/mj/common/js/common.js?time=20180326"></script>
+    <script type="text/javascript" src="/mj/page/vip/js/vip.js?time=201711230001"></script>
+</body>
+</html>

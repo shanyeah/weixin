@@ -1,0 +1,83 @@
+/**card.wxss**/
+.login_logo {
+  width: 120px;
+  height: 120px;
+  margin:20px auto;
+  display:block;
+}
+
+.card_empty_view {
+  width: 100%;
+  height: 40px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: white;
+}
+
+.vip_protocol_view {
+  margin-top: 10px;
+  width: 100%;
+  height: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: #3F8CF7;
+  font-size: 15px;
+}
+
+.card_empty_text {
+  margin-top: 10px;
+  color: #515151;
+  font-size: 15px;
+
+}
+
+.card_button_view {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  height: 36px;
+  background: #1A1211;
+}
+
+.card_button {
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: white;
+  font-size: 15px;
+}
+
+.card_view {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  height: 180px;
+  background: white;
+}
+
+.card_img {
+  margin-top: 10px;
+  width: 90%;
+  height: 160px;
+  border-radius: 10px;
+}
+
+.header_line {
+  width: 100%;
+  height: 4px;
+  background: #987C4D;
+}
+
+.cash_text {
+  color: #987C4D;
+}
+
+.card-cell {
+  margin-left: 10px;
+  margin-right: 10px;
+  border-radius: 5px;
+}

@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, initial-scale=1">
+	<meta content="yes" name="apple-mobile-web-app-capable">
+	<meta content="black" name="apple-mobile-web-app-status-bar-style">
+	<meta content="telephone=no" name="format-detection">
+	<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+	<meta http-equiv="Pragma" content="no-cache" />
+	<meta http-equiv="Expires" content="0" />
+	<link rel="stylesheet" href="/mj/common/css/msui.css">
+    <link rel="stylesheet" href="/plugins/icon/iconfont.css">
+    <link rel="stylesheet" href="/mj/common/css/main.css">
+	<title>我的电影</title>
+    <style type="text/css">
+        .bookmovie .moviename {
+             margin: 0;
+        }
+        .bookmovie .mtleft {
+            display: inline-block;
+            float: left;
+            width: 100px;
+            text-align: right;
+        }
+        .movietext {
+            margin-bottom: 0;
+        }
+        .detail-a{
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+	<div class="page-group">
+        <div class="page" id="mymovie">
+            <!-- 这里是页面内容区 -->
+            <div class="content infinite-scroll infinite-scroll-bottom" data-distance="100">
+                <div class="sin-consumer">
+                </div>
+                <!-- 无记录提示 -->
+                <div class="blankTips">您还没有预订电影！</div>
+
+                <ul class="bookmovie">
+                     <!--<li>-->
+                        <!--<div class="code"></div>-->
+                        <!--<div class="moviename">虎胆龙威</div>-->
+                        <!--<div class="movietext">-->
+                            <!--<div><span class="mtleft">网吧名称：</span><p>这是网吧名字</p></div>-->
+                            <!--<div><span class="mtleft">房型：</span><p>x</p></div>-->
+                            <!--<div><span class="mtleft">预订时间：</span><p>x</p></div>-->
+                            <!--<div><span class="mtleft">过期时间：</span><p>x</p></div>-->
+                        <!--</div>-->
+                        <!--<a href="" class="button button-fill button-success win30">退订</a>-->
+                    <!--</li>-->
+                </ul>
+
+                <!-- 加载提示符 -->
+                <div class="infinite-scroll-preloader">
+                    <div class="preloader"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script type='text/javascript' src='/plugins/js/jquery.min.1.11.3.js' charset='utf-8'></script>
+    <script type='text/javascript' src='/plugins/js/jquery-sm.js' charset='utf-8'></script>
+    <script type="text/javascript" src="/plugins/js/jquery.qrcode.min.js"></script>
+    <script type="text/javascript" src="/plugins/js/jquery-barcode.js"></script>
+    <script type="text/javascript" src="/mj/common/js/common.js?time=20180326"></script>
+    <script type="text/javascript" src="/mj/page/my/js/myFilm.js?time=0"></script>
+</body>
+</html>

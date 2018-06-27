@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, initial-scale=1">
+	<meta content="yes" name="apple-mobile-web-app-capable">
+	<meta content="black" name="apple-mobile-web-app-status-bar-style">
+	<meta content="telephone=no" name="format-detection">
+	<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" /> 
+	<meta http-equiv="Pragma" content="no-cache" /> 
+	<meta http-equiv="Expires" content="0" />
+	<link rel="stylesheet" href="/mj/common/css/msui.css">    
+    <link rel="stylesheet" href="/plugins/icon/iconfont.css">
+    <link rel="stylesheet" type="text/css" href="/mj/common/css/main.css">
+	<title>个人中心</title>
+</head>
+<body>
+	<div class="page-group">
+        <!-- 单个page ,第一个.page默认被展示-->
+        <div class="page page-current" id="index">
+            <!-- 工具栏 -->
+            <nav class="bar bar-tab"></nav>
+            <!-- 这里是页面内容区 -->
+            <div class="content pull-to-refresh-content nobar" data-ptr-distance="55">
+                <!-- 刷新 -->
+                <div class="pull-to-refresh-layer">
+                    <div class="preloader"></div>
+                    <div class="pull-to-refresh-arrow"></div>
+                </div>
+                <div class="userhearn">
+                    <div class="open-panel"><i class="icon iconfont icon-list"></i></div>
+                    <div class="user-img">
+                        <input type="file" name="file" class="fileLoader" /> 
+                        <img src="" id="photoUrl">
+                    </div>
+                    <div class="user-name" id="name">--</div>
+                    <div class="user-vip"><span class="icon iconfont icon-jinpaihuiyuan"><span id="cardCategoryName"></span>会员</span></div>
+                    <div class="user-md displaybox">
+                        <a href="/mj/page/my/consumerdetails.html" class="boxflex1" external><span>现金</span><p class="user-recharge" id="cashBalance">--</p></a>
+                        <div  class="line"></div>
+                        <a href="/mj/page/my/consumerdetails.html" class="boxflex1" external><span>赠送</span><p class="user-mobi" id="presentBalance">--</p></a>
+                        <div  class="line"></div>
+                        <a href="/mj/page/my/magicdetails.html" class="boxflex1" external><span>魔元</span><p class="user-mobi" id="magicCoin">--</p></a>
+                    </div>
+                </div>  
+                <div class="list-block userfoin">
+                    <ul>
+                        <li class="item-content">
+                            <div class="item-media"><i class="icon iconfont icon-shenfenrenzheng"></i></div>
+                            <div class="item-inner">
+                              <div class="item-title" id="idTypeName"></div>
+                              <div class="item-after" id="idNumber"></div>
+                            </div>
+                        </li>
+                        <li class="item-content">
+                            <div class="item-media"><i class="icon iconfont icon-phone"></i></div>
+                            <div class="item-inner">
+                              <div class="item-title">手机号码</div>
+                              <div class="item-after" id="phone">--</div>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+                <div class="list-block userfoin">
+                    <ul>
+                        <li>
+                            <a href="/mj/page/my/mybook.html" class="item-content item-link">
+                                <div class="item-media"><i class="icon iconfont icon-yuding"></i></div>
+                                <div class="item-inner">
+                                  <div class="item-title">我的预订</div>
+                                  <!-- <div class="item-after cor999">成功邀请3个好友</div> -->
+                                </div>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="/mj/page/my/myorder.html" class="item-content item-link external ">
+                                <div class="item-media"><i class="icon iconfont icon-yuding"></i></div>
+                                <div class="item-inner">
+                                  <div class="item-title">我的点餐</div>
+                                </div>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="/mj/page/my/myexchange.html" class="item-content item-link external">
+                                <div class="item-media"><i class="icon iconfont icon-order"></i></div>
+                                <div class="item-inner">
+                                  <div class="item-title">我的兑换</div>
+                                  <!-- <div class="item-after cor999">成功邀请3个好友</div> -->
+                                </div>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="/mj/page/my/mymovie.html" class="item-content item-link external">
+                            <!--<a href="/mj/page/my/myFilm.html" class="item-content item-link external">-->
+                                <div class="item-media"><i class="icon iconfont icon-dianying"></i></div>
+                                <div class="item-inner">
+                                  <div class="item-title">我的电影</div>
+                                  <!-- <div class="item-after cor999">成功邀请3个好友</div> -->
+                                </div>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="list-block userfoin">
+                    <ul>
+                        <li>
+                            <a href="/mj/page/my/mychengjiu.html" class="item-content item-link">
+                                <div class="item-media"><i class="icon iconfont icon-wodechengjiu"></i></div>
+                                <div class="item-inner">
+                                    <div class="item-title">我的成就</div>
+                                </div>
+                            </a>
+                        </li>  
+                        <li>
+                            <a href="/mj/page/my/myactivity.html" class="item-content item-link">
+                                <div class="item-media"><i class="icon iconfont icon-wodehuodong"></i></div>
+                                <div class="item-inner">
+                                  <div class="item-title">我的活动</div>
+                                </div>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="/mj/page/my/task.html" class="item-content item-link">
+                                <div class="item-media"><i class="icon iconfont icon-wodeyaoqing"></i></div>
+                                <div class="item-inner">
+                                    <div class="item-title">我的任务</div>
+                                </div>
+                            </a>
+                        </li>                      
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="page" id="newPage"></div>
+    </div>
+
+    <!-- popup, panel 等放在这里 -->
+    <div class="panel-overlay"></div>
+    <!-- Left Panel with Reveal effect -->
+    <div class="panel panel-left panel-reveal">
+        <div class="content-block">
+            <ul class="panelMain">
+                <li class="minerva cor666"><input type="file" name="file" class="fileLoader" /><i class="icon iconfont icon-piclight"></i> 修改头像</li>
+                <li><a href="/mj/page/login/remeans.html" class="ReInfo cor666" external><i class="icon iconfont icon-edit"></i> 修改昵称</a></li>
+                <li class=""><a href="/mj/page/login/resetpass.html" class="cor666 external"><i class="icon iconfont icon-lock"></i> 修改密码</a></li>
+                <li class="logout"><i class="icon iconfont icon-close"></i> 退出登陆</li>
+                <li class="close-panel"><i class="icon iconfont icon-forward"></i> 返回</li>
+            </ul>
+            <!-- Click on link with "close-panel" class will close panel -->
+        </div>
+    </div>
+    <script type='text/javascript' src='/plugins/js/zepto.js' charset='utf-8'></script>
+    <script type='text/javascript' src='/plugins/js/sm.js' charset='utf-8'></script>
+    <script type="text/javascript" src="/mj/common/js/common.js?time=20180326"></script>
+    <script type="text/javascript" src="/mj/page/my/js/my.js?time=201709250000"></script>
+</body>
+</html>

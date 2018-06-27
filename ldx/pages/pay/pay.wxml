@@ -1,0 +1,6 @@
+<!--pages/pay/pay.wxml-->
+<view class='container'>
+  <!-- <view class='pay_view'>
+      <text class='pay_text'>支付中...</text>
+  </view> -->
+</view>

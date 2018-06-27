@@ -1,0 +1,28 @@
+<!--pages/discorver/favorite.wxml-->
+<view class='container'>
+  <view wx:for="{{stgList}}" wx:key="item">
+    <view class="stg_cell" data-id="{{item.organId}}" data-name="{{item.organName}}" bindtap="stgClick">
+            <image src="{{item.coverImg}}" class="stg_image" mode="aspectFill"></image>
+            <view style="width: 80%">
+              <view class="stg_distance">{{item.showDistance}}</view>
+              <view class="stg_name">{{item.organName}}</view>
+              <view class="stg_score">{{item.score == 0 ? "暂无评分" : "评分:" + item.score + "分"}}                                </view>
+              <view class="stg_desc">消费({{item.netCostDesc}})</view>
+              <view class="stg_desc">{{item.address}}</view>
+            </view>
+      </view>
+      <view class='stg_separator'></view>
+  </view>
+  <view style='height:10px'></view>
+
+
+  <block wx:if="{{showFollowButton}}">
+    <view  class='favorite_text'>
+          暂未关注门店
+    </view>
+    <view class='favorite_button' bindtap='followButtonClick'>
+          马上关注门店
+    </view>
+  </block>
+  
+</view>

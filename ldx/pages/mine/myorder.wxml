@@ -1,0 +1,17 @@
+<!--pages/mine/myorder.wxml-->
+<view class="container">
+
+    <view class="zan-panel">
+      <view wx:for="{{orderList}}" wx:key="item">
+          <view class="zan-cell order_cell">
+              <view class="order_organ">门店名称: {{item.organName}}</view>
+              <view class="order_desc">支付说明: <text class='order_desc_text'>{{item.payInfo}}</text> </view>
+              <view class="order_desc">应付金额: <text class='order_desc_text'>{{item.payAmount}}</text> </view>
+              <view class="order_desc">实付金额: <text class='order_desc_text'> {{item.incomeAmount}}</text> </view>
+              <view class="order_desc">支付状态: <text class='order_desc_text'>{{item.statusText}}</text> </view>
+              <view class="order_detail">订单详情</view>
+              
+          </view>
+      </view>
+    </view> 
+</view>

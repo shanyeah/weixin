@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, initial-scale=1">
+	<meta content="yes" name="apple-mobile-web-app-capable">
+	<meta content="black" name="apple-mobile-web-app-status-bar-style">
+	<meta content="telephone=no" name="format-detection">
+	<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" /> 
+	<meta http-equiv="Pragma" content="no-cache" /> 
+	<meta http-equiv="Expires" content="0" />
+	<link rel="stylesheet" href="/mj/common/css/msui.css">    
+    <link rel="stylesheet" href="/plugins/icon/iconfont.css">
+    <link rel="stylesheet" href="/mj/common/css/main.css">
+	<title></title>
+    <style type="text/css">
+        .content-media{
+            padding-right: 0.75rem;
+        }
+        .content-media .iconfont{
+            font-size: 16px;
+            margin: 0;
+        }
+        .tel-icon{
+            margin-left: 0.75rem !important;
+        }
+        .add-div{
+            padding-left: 0;
+            margin-left: 0!important;
+        }
+        .add-div .item-title{
+            border-right: 1px solid #eee;
+        }
+
+        #address{
+            font-size: 0.7rem;
+            white-space: normal;
+        }
+        .little{
+            font-size: 0.7rem;
+        }
+        .name{
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+	<div class="page-group">
+        <!-- 单个page ,第一个.page默认被展示-->
+        <div class="page" id="espdetails">            
+            <!-- 工具栏 -->
+            <nav class="bar bar-tab">
+                
+            </nav>
+            
+            <!-- 工具栏 -->
+            <!-- <div class="buttons-row viptop-tab">
+                <a class="button" id="cityName">--</a>
+                <a class="button name WhiteSpace" >--</a>
+                <a class="button"><spa  id="rating">--</spa> 分 <span class="icon iconfont icon-like"></span></a>
+            </div> -->
+            <!-- 这里是页面内容区 -->
+            <div class="content">         
+                <!--  -->
+                <div id="images-big"></div>
+                <div class="list-block NewEsplist">
+                    <ul>
+                        <li class="item-content">
+                            <div class="item-inner">
+                                <div class="item-title "><span id="stgName" class="name"></span></div>
+                            </div>
+                        </li>
+                        <li class="item-content">
+                            <div class="item-inner">
+                                <div class="item-title little">评分：<span id="rating"></span><span id="ratingT"></span></div>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+                <div class="buttons-tab newtab">
+                    <a href="" class="button external " id="booksteasB"><i class="icon iconfont icon-kongxianzuowei"></i><p>订座</p></a>
+                    <a href="" class="button external gotoOrder"><i class="icon iconfont icon-yuding"></i><p>点餐</p></a>
+                    <a href="" class="button external rearHref"><i class="icon iconfont icon-order"></i><p>商城</p></a>
+                    <a href="" class="button external gotoMovie"><i class="icon iconfont icon-dianying"></i><p>电影</p></a>
+                </div>
+                <div class="list-block NewEsplist">
+                    <ul>
+                        <!--<li class="item-content">-->
+                            <!--<div class="item-inner">-->
+                                <!--<div class="item-title"><i class="icon iconfont icon-location"></i><span id="address"></span></div>-->
+                            <!--</div>-->
+                        </li>
+                        <li class="item-content">
+                            <div class="item-media content-media">
+                                <i class="icon iconfont icon-location"></i>
+                            </div>
+                            <div class="item-inner add-div">
+                                <div class="item-title">
+                                    <div id="address"></div>
+                                </div>
+                                <div class="item-after tel-icon"><a id="espPhone"><i class="icon iconfont icon-phone"></i></a></div>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+                <!--  -->
+                <div class="tabs">
+                    <div id="tab1" class="tab active">
+                        <div class="boxMain">
+                            <div class="espdemain" id="stgDesc">
+                            </div>                            
+                        </div>
+                        <div class="leave">
+                            <div class="flexbox"><span class="cor999">会员评价(<span class="totleSEP"></span>)</span><a href="" class="button button-fill button-success bacpin espbtn">点评</a></div>
+                            <ul class="leaveList"></ul>
+                            <a href="leavePage.html" class="moreleave" external>查看更多点评</a>
+                        </div>
+                    </div>
+                    <div id="tab2" class="tab">
+                        <div class="conversion-main marginAuto">
+                            <div class="card-content nearbyDJG duihuang">
+                            </div>
+                        </div>
+                    </div>
+                    <!-- <div id="tab3" class="tab">
+                        <div class="card indexcard huodong">
+                            <div class="activetyList">
+                                <div class="card-content">
+                                    <div class="list-block media-list">
+                                        <a href="/mj/activity/lsactive/activetydetails.html" class="item-link external  item-content">
+                                            <div class="item-media"><img src="../../activity/lsactive/images/592485e.jpg" style="width: 4rem;"></div>
+                                            <div class="item-inner">
+                                                <div class="item-title-row">
+                                                  <div class="item-title">赢取最后一张门票</div>
+                                                  <div class="item-after">04-05至04-07有效</div>
+                                                </div>
+                                                <div class="item-text">what?你问是什么演唱会？当然是4月8日周杰伦地表最强演唱会</div>
+                                            </div>
+                                        </a>
+                                    </div>
+                                </div>
+                                <div class="card-footer">
+                                    <span>已有<span class="corred">431</span>人参与活动</span>
+                                    <span>04月04日22:30</span>
+                                    <span><i class="icon iconfont "></i><span class="name"></span></span>
+                                </div>
+                            </div>
+                        </div>
+                    </div> -->
+                    <!-- 赛事 -->
+                    <div id="tab4" class="tab">
+                        <div class="card indexcard huodong">
+                            <div class="activetyList">
+                                <div class="card-content">
+                                    <div class="list-block media-list">
+                                        <a data-href="http://m.jesport.com/sly/guess.html" class="item-link external rearHref item-content">
+                                            <div class="item-media"><img src="../../activity/lsactive/images/3.jpg" style="width: 4rem;"></div>
+                                            <div class="item-inner">
+                                                <div class="item-title-row">
+                                                  <div class="item-title">JTeam反水挑战赛</div>
+                                                  <div class="item-after">04-10至04-17有效</div>
+                                                </div>
+                                                <div class="item-text">4月9日，魔杰电竞，决一胜负！<br/>活动期间参与竞猜可分享大奖！</div>
+                                            </div>
+                                        </a>
+                                    </div>
+                                </div>
+                                <div class="card-footer">
+                                    <span>已有<span class="corred">201</span>人参与活动</span>
+                                    <!-- <span>04月04日22:30</span> -->
+                                    <span><i class="icon iconfont "></i><span class="name"></span></span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="remarkbox">
+                <div class="boxMain">
+                    <!-- <div class="tips">您在2017/12/30 17:45-19:40在此门店上机！</div> -->
+                    <!-- <p class="cor999 tc">在上机后一个月内均可在此发表点评</p> -->
+
+                    <div>请您对此店进行点评：</div>
+                    <div class="starlevel">
+                        <div class="starlevelList">
+                            <span>服务</span>
+                            <span class="fr">5.0 分</span>
+                            <span class="star" data-name="5">
+                                <i class="icon iconfont icon-shixinxingxing"></i>
+                                <i class="icon iconfont icon-shixinxingxing"></i>
+                                <i class="icon iconfont icon-shixinxingxing"></i>
+                                <i class="icon iconfont icon-shixinxingxing"></i>
+                                <i class="icon iconfont icon-shixinxingxing"></i>
+                            </span>
+                        </div>
+                        <div class="starlevelList">
+                            <span>环境</span>
+                            <span class="fr">5.0 分</span>
+                            <span class="star" data-name="5">
+                                <i class="icon iconfont icon-shixinxingxing"></i>
+                                <i class="icon iconfont icon-shixinxingxing"></i>
+                                <i class="icon iconfont icon-shixinxingxing"></i>
+                                <i class="icon iconfont icon-shixinxingxing"></i>
+                                <i class="icon iconfont icon-shixinxingxing"></i>
+                            </span>
+                        </div>
+                        <div class="starlevelList">
+                            <span>网速</span>
+                            <span class="fr">5.0 分</span>
+                            <span class="star" data-name="5">
+                                <i class="icon iconfont icon-shixinxingxing"></i>
+                                <i class="icon iconfont icon-shixinxingxing"></i>
+                                <i class="icon iconfont icon-shixinxingxing"></i>
+                                <i class="icon iconfont icon-shixinxingxing"></i>
+                                <i class="icon iconfont icon-shixinxingxing"></i>
+                            </span>
+                        </div>
+                        <div class="starlevelList">
+                            <span>配置</span>
+                            <span class="fr">5.0 分</span>
+                            <span class="star" data-name="5">
+                                <i class="icon iconfont icon-shixinxingxing"></i>
+                                <i class="icon iconfont icon-shixinxingxing"></i>
+                                <i class="icon iconfont icon-shixinxingxing"></i>
+                                <i class="icon iconfont icon-shixinxingxing"></i>
+                                <i class="icon iconfont icon-shixinxingxing"></i>
+                            </span>
+                        </div>
+                    </div>
+                    <textarea class="levetext"></textarea>
+                    <a href="" class="button button-fill button-success bacpin" id="submitreview">发表点评</a>
+                </div>
+            </div>
+            <div class="mask"></div>
+        </div>
+    </div>
+    <script type='text/javascript' src='/plugins/js/jquery.min.1.11.3.js' charset='utf-8'></script>
+    <script type='text/javascript' src='/plugins/js/jquery-sm.js' charset='utf-8'></script>
+    <script type="text/javascript" src="https://res.wx.qq.com/open/js/jweixin-1.3.0.js"></script>
+    <script type="text/javascript" src="/mj/common/js/common.js?time=20180326"></script>
+    <script type="text/javascript" src="/mj/page/ESP/js/esp.js?time=201711230001"></script>
+</body>
+</html>

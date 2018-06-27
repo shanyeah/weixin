@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, initial-scale=1">
+	<meta content="yes" name="apple-mobile-web-app-capable">
+	<meta content="black" name="apple-mobile-web-app-status-bar-style">
+	<meta content="telephone=no" name="format-detection">
+	<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" /> 
+	<meta http-equiv="Pragma" content="no-cache" /> 
+	<meta http-equiv="Expires" content="0" />
+	<link rel="stylesheet" href="/xcx/mj/common/css/msui.css">
+    <link rel="stylesheet" href="/xcx/plugins/icon/iconfont.css">
+    <link rel="stylesheet" href="/xcx/mj/common/css/main.css">
+	<title>影片订单详情</title>
+	<style type="text/css">
+		.filmName{
+			font-weight: 600!important;
+			font-size: 1rem;
+		}
+		.ticket-info{
+			overflow: initial!important;
+			font-size: 0.7rem!important;
+		}
+		.showDateTime{
+			color: #f1570c;
+		}
+		.seat-info-div{
+			word-wrap: break-word;
+			overflow: initial;
+			height: inherit;
+		}
+		.payMain{
+			margin: 0 0 5px 0;
+		}
+		.pay-type-list{
+			margin: 5px 0;
+			font-size: 0.65rem;
+		}
+		.gou{
+			color: #f1570c !important;
+			display: none!important;
+		}
+		.pay-type-list .active .gou{
+			display: block!important;
+		}
+		.ticket-fee-div{
+			color: #868686;
+			font-size: 0.5rem;
+		}
+		.btn{
+			display: block;
+			text-align: center;
+			line-height: 2rem;
+			height: 2rem;
+			font-size: 0.8rem;
+			margin-top: 0;
+		}
+		.pay-btn{
+			color: #fff;
+			background-color: #00CC66;
+			position: absolute;
+			width: 100%;
+			bottom: 0;
+		}
+		.paybox {
+			background-color: #fff;
+			position: absolute;
+			width: 100%;
+			bottom: 0;
+		}
+		.print-code-li{
+			color: #868686;
+		}
+		.order-detail{
+			margin: 0;
+			font-size: 0.75rem;
+			color: #868686;
+		}
+		.order-detail .order-title{
+			font-size: 0.95rem;
+			color: #3d4145;
+		}
+		.item-title-row{
+			line-height: 1.5rem;
+		}
+		.modal-class{
+			width: 300px;
+			height: 300px;
+		}
+		.modal-class .modal-inner{
+			background: #ffffff;
+		}
+		.payType-ul{
+			font-size: 0.8rem;
+		}
+		.back-btn{
+			position: absolute;
+			width: 100%;
+			bottom: 0;
+		}
+		a:active {
+			color: #ffffff;
+		}
+		.lockExpiredTime{
+			color: #ff0000 !important;
+		}
+	</style>
+</head>
+<body> 
+	<div class="page-group">
+        <div class="page" id="consumerdetails">
+            <!-- 这里是页面内容区 -->
+            <div class="content">
+				<div class="list-block media-list payMain">
+					<ul>
+						<li>
+							<div class="item-content">
+								<div class="item-inner">
+									<div class="item-title-row">
+										<div class="item-title filmName"></div>
+										<div class="item-after"><a href="#" class="button button-fill button-danger cancel-btn" style="display: none;">取消</a></div>
+									</div>
+									<div class="item-subtitle organName"></div>
+									<div class="item-text">
+										<div class="showDateTime"></div>
+										<div class="hallSeats"></div>
+									</div>
+								</div>
+							</div>
+						</li>
+						<li class="print-code-li" style="display: none;">
+							<div class="item-content">
+								<div class="item-inner">
+									<div class="item-title-row">
+										<div class="item-title">影院前台取票</div>
+									</div>
+									<div class="item-title-row">
+										<div class="item-title">取票码：<span class="printCode"></span></div>
+										<div class="item-after"><a href="#" class="button button-fill qrCode-modal">二维码</a></div>
+									</div>
+								</div>
+							</div>
+						</li>
+					</ul>
+				</div>
+
+				<div class="list-block media-list order-detail">
+					<ul>
+						<li>
+							<div class="item-content">
+								<div class="item-inner">
+									<div class="item-title-row">
+										<div class="item-title order-title">订单信息</div>
+									</div>
+									<div class="item-title-row">
+										<div class="item-title">订单状态</div>
+										<div class="item-after showStatus"></div>
+									</div>
+									<div class="item-title-row lockExpiredTime_div" style="display: none">
+										<div class="item-title">失效时间</div>
+										<div class="item-after lockExpiredTime"></div>
+									</div>
+									<div class="item-title-row">
+										<div class="item-title">下单时间</div>
+										<div class="item-after createTime"></div>
+									</div>
+									<div class="item-title-row">
+										<div class="item-title">订单编号</div>
+										<div class="item-after orderNo"></div>
+									</div>
+									<div class="item-title-row">
+										<div class="item-title">下单手机</div>
+										<div class="item-after mobile"></div>
+									</div>
+									<div class="item-title-row">
+										<div class="item-title">实付金额</div>
+										<div class="item-after">￥<span class="incomeAmount"></span>元</div>
+									</div>
+									<div class="item-title-row payInfo-div" style="display: none;">
+										<div class="item-title">支付说明</div>
+										<div class="item-after payInfo"></div>
+									</div>
+								</div>
+							</div>
+						</li>
+					</ul>
+				</div>
+
+				<div class="list-block pay-type-list" style="display: none">
+					<ul class="payType-ul">
+						<li class="active" data-payType="2">
+							<div class="item-content">
+								<div class="item-inner">
+									<div class="item-title">会员卡支付</div>
+									<div class="item-after gou">✔</div>
+								</div>
+							</div>
+						</li>
+						<li data-payType="1">
+							<div class="item-content">
+								<div class="item-inner">
+									<div class="item-title">微信支付</div>
+									<div class="item-after gou">✔</div>
+								</div>
+							</div>
+						</li>
+					</ul>
+					<div><a class="btn pay-btn" id="payChooseBtn">确认支付</a></div>
+				</div>
+			</div>
+        </div>
+    </div>  
+</body>
+	<script type='text/javascript' src='/xcx/plugins/js/jquery.min.1.11.3.js' charset='utf-8'></script>
+	<script type='text/javascript' src='/xcx/plugins/js/jquery-sm.js' charset='utf-8'></script>
+	<script type="text/javascript" src="/xcx/plugins/js/jquery.qrcode.min.js"></script>
+	<script type="text/javascript" src="/xcx/plugins/js/jquery-barcode.js"></script>
+    <<!--script type='text/javascript' src='/plugins/js/zepto.js' charset='utf-8'></script>
+    <script type='text/javascript' src='/plugins/js/sm.js' charset='utf-8'></script>-->
+	<script type="text/javascript" src="/xcx/mj/common/js/common.js?time=20180326"></script>
+	<script type="text/javascript" src="/xcx/mj/page/film/js/filmBillDetail.js?time=15"></script>
+</html>

@@ -1,0 +1,57 @@
+<!--pages/mine/mywallet.wxml-->
+<view class="container">
+  <view class="zan-panel">
+      <view class='user_detail_view'>
+          <view class='user_money_view'>
+            <text>现金余额</text>
+            <text>{{totalCashBalance}}</text>
+          </view>
+          <view class='user_detail_line'></view>
+          <view class='user_money_view'>
+            <text>赠送余额</text>
+            <text>{{totalPresentBalance}}</text>
+          </view>
+          <view class='user_detail_line'></view>
+          <view class='user_money_view'>
+            <text>钱包金额</text>
+            <text>{{totalBalance}}</text>
+          </view>
+      </view>
+  </view>
+
+
+  <view wx:if="{{walletList.length == 0}}" class='card_empty_view'>
+      <text class='card_empty_text'>你还没有会员卡, 赶快去开通吧!</text>
+  </view>
+
+    <block wx:for="{{walletList}}" wx:key="item">
+        <view class="zan-panel card-cell">
+          <view class="zan-cell">
+              <view class="zan-cell__bd">门店名称</view> 
+              <view class="zan-cell__ft">{{item.organName}}</view>
+          </view>
+          <view class="zan-cell">
+              <view class="zan-cell__bd">会员等级</view> 
+              <view class="zan-cell__ft">{{item.className}}</view>
+          </view>
+            
+          <view class="zan-cell zan-cell--access">
+              <view class="zan-cell__bd">钱包余额</view> 
+              <view class="zan-cell__ft"><text class="cash_text">{{item.balance}}元</text></view>
+          </view>
+
+          <view class="zan-cell zan-cell--access">
+              <view class="zan-cell__bd">现金余额</view> 
+              <view class="zan-cell__ft"><text class="cash_text">{{item.cashBalance}}元</text></view>
+          </view>
+
+          <view class="zan-cell zan-cell--access">
+              <view class="zan-cell__bd">赠送余额</view> 
+              <view class="zan-cell__ft"><text class="cash_text">{{item.presentBalance}}元</text></view>
+          </view>
+        </view>
+    </block>
+
+  <view style='height:10px'></view>
+
+</view>

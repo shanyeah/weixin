@@ -1,0 +1,139 @@
+<!--pages/discorver/stg.wxml-->
+<view class="container">
+
+  <block wx:if="{{stgInfo}}">
+
+
+   <view class='top_view'>
+      <view class='switch_view'>
+         <view class='switch_button' bindtap='switchStg'>
+            <view style='display:inline-block'>
+            切换
+            <image style='width: 18px; height: 18px; vertical-align:middle;' src='../../images/arrow_down.png'></image>
+            </view>
+         </view>
+      </view>
+      <view class='search_view'>
+        <view class='search_button' bindtap='search'>
+            <view style='display:inline-block'>
+                <image style='width: 18px; height: 18px; margin-right: 3px; vertical-align:middle;' src='../../images/search.png'></image> 
+                搜索附近的门店
+            </view>
+         </view>
+      </view>
+   </view>
+
+    <view class="zan-panel" style="margin-top:0px;">
+      <view class="zan-cell info_cell">
+          <!-- <view class="zan-cell__bd info_cell" >{{stgInfo.organName}}</view> -->
+          <view>
+            <image class='info_image' src="{{stgInfo.coverImg}}"></image>
+          </view>
+
+          <view class='info_desc_col'>
+            <view class='info_mid_col'>
+             <view class='info_title'>{{stgInfo.organName}}</view>
+             <view class='info_desc'> {{stgInfo.score == 0 ? "暂无评分" : "评分:" + stgInfo.score + "分" + " | " + stgInfo.reviewCount + "条"}}</view>
+             <view class='info_desc'>消费({{stgInfo.netCostDesc}})</view>
+             <view class='info_member'>{{stgInfo.memberStatus == 0 ? "您还不是门店会员" : "门店会员"}}</view>
+          </view>
+          <view class='info_last_col'>
+              <view wx:if="{{stgInfo.followStatus == 0}}"> 
+                <button class="zan-btn zan-btn--small follow_btn" bindtap='follow'>+关注</button>
+              </view>
+              <view wx:else> 
+                <view class="unfollow_btn" bindtap='unfollow'>已关注</view>
+              </view>
+              
+              <view class="info_seatDesc">
+                {{stgInfo.seatDesc}}
+              </view>
+            </view>
+          </view>
+          
+      </view>
+
+      <view class="zan-cell">
+          <view class="zan-cell__ft">
+            <image src="../../images/location.png" style="width:16px;height:16px;margin-top:4px;"></image>
+          </view>
+          
+          <view class="zan-cell__bd des_cell" style='margin-left:10px; margin-right:10px' bindtap='openLocation' >
+             {{stgInfo.address}}
+          </view>
+          <view class="zan-cell__ft" style='margin-right:16px;color:lightgrey;'>|</view>
+          <view class="zan-cell__ft" bindtap="phoneCall">
+             <image src="../../images/phone.png" style="width:16px;height:16px"></image>
+          </view>
+      </view>
+
+      
+    </view>
+
+    <view class="zan-panel">
+      <scroll-view scroll-x="true" style="height: 90px;" >
+        <view class="zan-cell nav_cell">
+          <view wx:for="{{services}}" wx:key="item" class="nav_item" data-tag="{{item.tag}}" bindtap="serviceClick">
+                <image src='{{item.imgUrl}}' class='nav_icon'></image>
+                <text class='nav_text'>{{item.name}}</text>
+          </view>
+        </view>
+      </scroll-view>
+    </view>
+
+    <view class="zan-panel">
+      <view class="swiper-tab">
+       <view class="swiper-tab-item {{currentTab==0?'active':''}}" data-current="0" bindtap="clickTab">门店简介</view>
+       <view class="swiper-tab-item {{currentTab==1?'active':''}}" data-current="1" bindtap="clickTab">会员点评({{stgInfo.reviewCount}})</view>
+     </view> 
+      <view wx:if="{{currentTab == 0}}"> 
+        <view class="zan-cell">
+          <view class="zan-cell__bd" style='width:100%'>
+              <rich-text nodes="{{html}}">
+              </rich-text>
+          </view>
+        </view>
+        
+      </view>
+      <view wx:else> 
+          <view class="zan-cell">
+          <view class="zan-cell__bd des_cell" >{{stgInfo.score == 0 ? "暂无评分" : "评分:" + stgInfo.score + "分"}}</view>
+          <view class="zan-cell__ft">
+          <button class="zan-btn zan-btn--small review_btn" bindtap='addReview'>点评</button>
+          </view>
+      </view>
+
+      <view wx:for="{{reviewList}}">
+        <view class="review_cell">
+          <image class="review_img" src="{{item.photoUrl ? item.photoUrl : '../../images/userimg.jpg'}}" ></image>
+          <!-- Right -->
+          <view style="width: 100%;">
+            <view style="display: block;">
+                <view class="review_rating">
+                    <text>{{item.avgScore}}分</text>
+                    <image src='../../images/like.png' class='review_like'></image>
+                </view>
+                <view class="review_name">
+                    <text>{{item.name}}</text>
+                </view>
+              </view>
+              <view class="review_text">
+                <text>{{item.content}}</text>
+              </view>
+              <view class="review_date">
+                <text>{{item.createTime}}</text>
+              </view>
+            </view>
+        </view>
+        <view class="review_line"></view>
+      </view>
+      </view>
+      
+      
+    </view>
+    
+  </block>
+  
+  
+</view>
+

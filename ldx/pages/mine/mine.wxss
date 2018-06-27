@@ -1,0 +1,113 @@
+/**index.wxss**/
+.login_logo {
+  width: 120px;
+  height: 120px;
+  margin:20px auto;
+  display:block;
+}
+
+.header_view {
+  display: block;
+  width: 100%;
+  height:180px;
+}
+
+.header_background {
+  width:100%;
+  height:180px;
+  z-index:0;
+}
+
+.setting_view {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 2;
+}
+
+.setting_icon {
+  margin-top: 10px;
+  margin-left: 10px;
+  width: 24px;
+  height: 24px;
+}
+
+.header_content {
+  position: absolute;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 180px;
+  z-index:1;
+}
+
+.header_line {
+  width: 100%;
+  height: 4px;
+  background: #d4237a;
+}
+
+.user_img {
+   margin-top: 20px; 
+  margin-bottom: 10px;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  border-color: white;
+  border-width: 2px;
+}
+
+.user_name {
+  font-size: 14px;
+  color: white;
+}
+
+.user_class {
+  display: flex;
+  align-items:center;
+  margin-top: 10px;
+  height: 20px;
+}
+
+.user_class_icon {
+  width: 16px;
+  height: 16px;
+}
+
+.user_class_text {
+  font-size: 14px;
+  color: #987C4D;
+}
+
+.user_detail_view {
+  margin-top: 10px;
+  display: flex;
+  width: 100%;
+  height: 40px;
+  color: white;
+  font-size: 12px;
+}
+
+.user_money_view {
+  display: flex;
+  flex-direction:column;
+  align-items:center;
+  width: 33%;
+  height: 40px;
+}
+
+.user_detail_line {
+  background: #515151;
+  width: 1px;
+  height: 36px;
+}
+
+.cell_icon {
+  width: 20px;
+  height: 20px;
+  align-self: center;
+  margin-right: 10px;
+}

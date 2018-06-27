@@ -1,0 +1,102 @@
+<!--index.wxml-->
+<import src="../../zanui-weapp/dist/field/index.wxml" />
+<view wx:if="{{needLogin}}" class="container">
+  <image src='../../images/login_logo.png' class='login_logo'></image>
+
+  <view class="zan-panel">
+    <view class="zan-cell zan-field">
+      <input
+        type="number"
+        bindinput="bindMobile"
+        placeholder="请输入手机号"
+        value=''
+        class="zan-field__input zan-cell__bd"/>
+    </view>
+
+    <view class="zan-cell zan-field">
+      <input
+        type="text"
+        bindinput="bindPassword"
+        placeholder="验证码/登录密码"
+        password=true
+        class="zan-field__input zan-cell__bd"/>
+      <view class="zan-cell__ft">
+        <button class="zan-btn zan-btn--small zan-btn--blue" bindtap='getCode'>获取验证码</button>
+      </view>
+    </view>
+  </view>
+
+  <view class="zan-btns" style="margin-top: 20px;">
+    <button class="zan-btn zan-btn--primary" bindtap='login'>登录</button>
+  </view>
+</view>
+
+<view wx:if="{{!needLogin}}" class="container">
+  <view class="header_view">
+     <!-- <navigator class="setting_view" url='./setting'><image class="setting_icon" src='../../images/setting.png'></image></navigator> -->
+     <image class='header_background' mode="aspectFill" src='../../images/mine_bk.jpg'></image>
+     <view class='header_content'>
+        <image class='user_img' src="{{photoUrl}}"></image>
+        <text class='user_name'>{{mjUserInfo.name ? mjUserInfo.name :  '魔杰会员'}} {{mjUserInfo.nickName ? '(' + mjUserInfo.nickName + ')' : '' }}</text>
+        <view class='user_class'>
+          <!-- <image class='user_class_icon' src='../../images/member.png'></image> -->
+          <!-- <text class='user_class_text'>{{mjUserInfo.className}}会员</text> -->
+        </view>
+
+         <view class='user_detail_view'>
+          <view class='user_money_view'>
+            <text>现金余额</text>
+            <text>{{totalCashBalance}}</text>
+          </view>
+          <view class='user_detail_line'></view>
+          <view class='user_money_view'>
+            <text>赠送余额</text>
+            <text>{{totalPresentBalance}}</text>
+          </view>
+          <view class='user_detail_line'></view>
+          <view class='user_money_view'>
+            <text>钱包余额</text>
+            <text>{{totalBalance}}</text>
+          </view>
+        </view> 
+     </view>
+  </view>
+  <view class="header_line"></view>
+
+  <view class="zan-panel">
+    <view class="zan-cell">
+          <image src='../../images/my_id.png' class='cell_icon'></image>
+          <view class="zan-cell__bd">证件号</view> 
+          <view class="zan-cell__ft">{{(mjUserInfo.idNumber && mjUserInfo.idNumber.length > 0) ? mjUserInfo.idNumber : '暂未绑定'}}</view>
+    </view>
+          
+      <view class="zan-cell">
+          <image src='../../images/my_phone.png' class='cell_icon'></image>
+          <view class="zan-cell__bd">手机号码</view> 
+          <view class="zan-cell__ft">{{(mjUserInfo.mobile && mjUserInfo.mobile.length > 0) ? mjUserInfo.mobile : '暂未绑定'}}</view>
+      </view>
+  </view>
+
+  <view class="zan-panel">
+        <navigator class="zan-cell zan-cell--access" url="./mywallet">
+            <image src='../../images/my_wallet.png' class='cell_icon'></image>
+            <view class="zan-cell__bd">我的钱包</view> 
+            <view class="zan-cell__ft"></view> 
+        </navigator>
+        <navigator class="zan-cell zan-cell--access" url="./myorder">
+          <image src='../../images/my_food.png' class='cell_icon'></image>
+          <view class="zan-cell__bd">我的点餐</view> 
+          <view class="zan-cell__ft"></view>
+        </navigator>
+  </view>
+
+  <view class="zan-panel">
+        <navigator class="zan-cell zan-cell--access" url="./setting">
+            <image src='../../images/setting.png' class='cell_icon'></image>
+            <view class="zan-cell__bd">我的设置</view> 
+            <view class="zan-cell__ft"></view> 
+        </navigator>
+  </view>
+
+  <view style='height:10px'></view>
+</view>

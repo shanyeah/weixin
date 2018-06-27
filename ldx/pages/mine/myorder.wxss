@@ -1,0 +1,35 @@
+/* pages/mine/myorder.wxss */
+
+.order_cell {
+  display:flex;
+  align-items: left;
+  flex-direction:column;
+  background: #fff;
+  width: 100%;
+  height: 160px;
+  border-bottom: 1px solid #eeeeee;
+}
+
+.order_organ {
+  font-size: 16px;
+  height: 24px;
+  line-height: 24px;
+}
+
+.order_desc {
+  color: black;
+  height: 28px;
+  line-height: 28px;
+}
+
+.order_desc_text {
+  color: orange;
+  height: 28px;
+  line-height: 28px;
+}
+
+.order_detail {
+  color: lightgreen;
+  height: 28px;
+  line-height: 28px;
+}
